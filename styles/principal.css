@@ -190,6 +190,22 @@ nav #pfp button{
     width: 5rem;
 }
 
+#messages main #archive #archive_info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex: 1;
+
+    padding-right: 1.25rem;
+}
+
+#messages main #archive #archive_info #archive_counter{
+    font-weight: bold;
+    font-size: .8rem;
+    color: var(--green-1);
+}
+
 #messages main .conversation_block {
     position: relative;
 
