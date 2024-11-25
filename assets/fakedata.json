@@ -1,44 +1,123 @@
 [
   {
     "id": 1,
-    "name": "Rodrigues Mouse",
-    "date": "7:03 PM",
-    "lastMessage": "Só entregar o trabalhinho lá"
+    "name": "Alice Oliveira",
+    "lastMessage": "Oi, tudo bem?",
+    "date": "09:15 AM"
   },
   {
-    "id": 1,
-    "name": "Rodrigues Mouse",
-    "date": "7:03 PM",
-    "lastMessage": "Só entregar o trabalhinho lá"
+    "id": 2,
+    "name": "Carlos Pereira",
+    "lastMessage": "Preciso de ajuda com o projeto.",
+    "date": "02:30 PM"
   },
   {
-    "id": 1,
-    "name": "Rodrigues Mouse",
-    "date": "7:03 PM",
-    "lastMessage": "Só entregar o trabalhinho lá"
+    "id": 3,
+    "name": "Fernanda Silva",
+    "lastMessage": "Vamos marcar a reunião amanhã?",
+    "date": "05:45 PM"
   },
   {
-    "id": 1,
-    "name": "Rodrigues Mouse",
-    "date": "7:03 PM",
-    "lastMessage": "Só entregar o trabalhinho lá"
+    "id": 4,
+    "name": "Eduardo Santos",
+    "lastMessage": "Acabei de enviar o relatório.",
+    "date": "11:00 AM"
   },
   {
-    "id": 1,
-    "name": "Rodrigues Mouse",
-    "date": "7:03 PM",
-    "lastMessage": "Só entregar o trabalhinho lá"
+    "id": 5,
+    "name": "Juliana Costa",
+    "lastMessage": "Que horas você chega?",
+    "date": "06:25 PM"
   },
   {
-    "id": 1,
-    "name": "Rodrigues Mouse",
-    "date": "7:03 PM",
-    "lastMessage": "Só entregar o trabalhinho lá"
+    "id": 6,
+    "name": "Mariana Almeida",
+    "lastMessage": "Estou esperando você no café.",
+    "date": "08:10 AM"
   },
   {
-    "id": 1,
-    "name": "Rodrigues Mouse",
-    "date": "7:03 PM",
-    "lastMessage": "Só entregar o trabalhinho lá"
+    "id": 7,
+    "name": "Rafael Gomes",
+    "lastMessage": "Amanhã nos vemos na reunião?",
+    "date": "01:00 PM"
+  },
+  {
+    "id": 8,
+    "name": "Luciana Rocha",
+    "lastMessage": "Liguei, mas não atendeu.",
+    "date": "03:55 PM"
+  },
+  {
+    "id": 9,
+    "name": "Gustavo Lima",
+    "lastMessage": "Conseguimos fechar o negócio.",
+    "date": "04:50 PM"
+  },
+  {
+    "id": 10,
+    "name": "Patricia Martins",
+    "lastMessage": "Me manda o endereço, por favor.",
+    "date": "12:30 PM"
+  },
+  {
+    "id": 11,
+    "name": "Pedro Souza",
+    "lastMessage": "Eu vou dar uma olhada no relatório.",
+    "date": "07:15 AM"
+  },
+  {
+    "id": 12,
+    "name": "Gabriela Costa",
+    "lastMessage": "Você vai para o evento hoje?",
+    "date": "09:40 PM"
+  },
+  {
+    "id": 13,
+    "name": "Thiago Almeida",
+    "lastMessage": "Aguardando sua confirmação.",
+    "date": "10:20 AM"
+  },
+  {
+    "id": 14,
+    "name": "Amanda Rocha",
+    "lastMessage": "Já enviei o documento.",
+    "date": "05:05 PM"
+  },
+  {
+    "id": 15,
+    "name": "Luiz Oliveira",
+    "lastMessage": "Vamos nos encontrar amanhã?",
+    "date": "08:50 PM"
+  },
+  {
+    "id": 16,
+    "name": "Cláudia Santos",
+    "lastMessage": "Isso pode esperar até amanhã.",
+    "date": "11:45 PM"
+  },
+  {
+    "id": 17,
+    "name": "Daniela Souza",
+    "lastMessage": "Você chegou na cidade?",
+    "date": "07:30 PM"
+  },
+  {
+    "id": 18,
+    "name": "Vinícius Costa",
+    "lastMessage": "Estou a caminho da sua casa.",
+    "date": "02:05 PM"
+  },
+  {
+    "id": 19,
+    "name": "Roberta Almeida",
+    "lastMessage": "Eu também adorei o evento!",
+    "date": "03:25 AM"
+  },
+  {
+    "id": 20,
+    "name": "Fábio Rocha",
+    "lastMessage": "Aguardo sua resposta sobre a reunião.",
+    "date": "06:40 AM"
   }
 ]
+
