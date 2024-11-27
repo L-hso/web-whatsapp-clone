@@ -47,7 +47,7 @@ function conversationsCreateContextMenu(e, {x=e.clientX, y=e.clientY, marginX, m
 conversations.forEach((block) => {
   const conversationOptions = block.querySelector(".conversation_options");
 
-  conversationOptions.addEventListener("click", (e)=>{conversationsCreateContextMenu(e, {x: e.target.getBoundingClientRect().x, y: e.target.getBoundingClientRect().y, marginX: "1.5", marginY: "0"})});
+  conversationOptions.addEventListener("click", (e)=>{conversationsCreateContextMenu(e, {x: e.target.getBoundingClientRect().x, y: e.target.getBoundingClientRect().y, marginX: "1.5", marginY: "1.5"})});
   block.addEventListener("contextmenu", (e)=>{conversationsCreateContextMenu(e, {marginX: "0", marginY: "0"})});
 });
 

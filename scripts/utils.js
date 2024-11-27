@@ -27,7 +27,7 @@ export class Dropdown {
     let origin = "";
 
     if (window.innerHeight * 0.475 < anchorPos.y) {
-      menu.style.bottom = `calc(${anchorPos.marginY}rem + ${window.innerHeight - anchorPos.y}px)`;
+      menu.style.bottom = `calc(${window.innerHeight - anchorPos.y}px)`;
       origin = "bottom";
 
     } else if (window.innerHeight * 0.525 > anchorPos.y) {
