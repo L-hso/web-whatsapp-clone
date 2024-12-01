@@ -1,123 +1,177 @@
 [
   {
-    "id": 1,
-    "name": "Alice Oliveira",
-    "lastMessage": "Oi, tudo bem?",
-    "date": "09:15 AM"
+      "id": 1,
+      "name": "Alice Johnson",
+      "lastMessage": "Olá, como você está?",
+      "lastSeen": "02:30 PM",
+      "date": "10:45 AM"
   },
   {
-    "id": 2,
-    "name": "Carlos Pereira",
-    "lastMessage": "Preciso de ajuda com o projeto.",
-    "date": "02:30 PM"
+      "id": 2,
+      "name": "Bob Smith",
+      "lastMessage": "Vamos marcar de nos encontrar em breve!",
+      "lastSeen": "09:15 AM",
+      "date": "12:20 PM"
   },
   {
-    "id": 3,
-    "name": "Fernanda Silva",
-    "lastMessage": "Vamos marcar a reunião amanhã?",
-    "date": "05:45 PM"
+      "id": 3,
+      "name": "Carol Miller",
+      "lastMessage": "Estou quase chegando!",
+      "lastSeen": null,
+      "date": "04:25 AM"
   },
   {
-    "id": 4,
-    "name": "Eduardo Santos",
-    "lastMessage": "Acabei de enviar o relatório.",
-    "date": "11:00 AM"
+      "id": 4,
+      "name": "David Brown",
+      "lastMessage": "Boa noite, nos falamos amanhã!",
+      "lastSeen": "10:05 PM",
+      "date": "02:30 AM"
   },
   {
-    "id": 5,
-    "name": "Juliana Costa",
-    "lastMessage": "Que horas você chega?",
-    "date": "06:25 PM"
+      "id": 5,
+      "name": "Eve White",
+      "lastMessage": "Isso é ótimo, não vejo a hora de começar!",
+      "lastSeen": null,
+      "date": "08:55 AM"
   },
   {
-    "id": 6,
-    "name": "Mariana Almeida",
-    "lastMessage": "Estou esperando você no café.",
-    "date": "08:10 AM"
+      "id": 6,
+      "name": "Frank Green",
+      "lastMessage": "Me avise se precisar de ajuda com isso.",
+      "lastSeen": "11:20 AM",
+      "date": "01:35 PM"
   },
   {
-    "id": 7,
-    "name": "Rafael Gomes",
-    "lastMessage": "Amanhã nos vemos na reunião?",
-    "date": "01:00 PM"
+      "id": 7,
+      "name": "Grace Black",
+      "lastMessage": "Eu adoraria te ver novamente!",
+      "lastSeen": null,
+      "date": "03:40 PM"
   },
   {
-    "id": 8,
-    "name": "Luciana Rocha",
-    "lastMessage": "Liguei, mas não atendeu.",
-    "date": "03:55 PM"
+      "id": 8,
+      "name": "Hank Adams",
+      "lastMessage": "Estou no trabalho agora, mais tarde nos falamos.",
+      "lastSeen": "01:30 PM",
+      "date": "09:00 AM"
   },
   {
-    "id": 9,
-    "name": "Gustavo Lima",
-    "lastMessage": "Conseguimos fechar o negócio.",
-    "date": "04:50 PM"
+      "id": 9,
+      "name": "Ivy Nelson",
+      "lastMessage": "Você já viu o último episódio da série?",
+      "lastSeen": null,
+      "date": "10:10 AM"
   },
   {
-    "id": 10,
-    "name": "Patricia Martins",
-    "lastMessage": "Me manda o endereço, por favor.",
-    "date": "12:30 PM"
+      "id": 10,
+      "name": "Jack Walker",
+      "lastMessage": "Com certeza, vamos marcar uma reunião!",
+      "lastSeen": "03:15 PM",
+      "date": "07:30 AM"
   },
   {
-    "id": 11,
-    "name": "Pedro Souza",
-    "lastMessage": "Eu vou dar uma olhada no relatório.",
-    "date": "07:15 AM"
+      "id": 11,
+      "name": "John Doe",
+      "lastMessage": "Precisamos conversar sobre isso mais tarde.",
+      "lastSeen": null,
+      "date": "06:25 PM"
   },
   {
-    "id": 12,
-    "name": "Gabriela Costa",
-    "lastMessage": "Você vai para o evento hoje?",
-    "date": "09:40 PM"
+      "id": 12,
+      "name": "Kathy Taylor",
+      "lastMessage": "Estarei em casa em breve!",
+      "lastSeen": "08:50 PM",
+      "date": "02:15 AM"
   },
   {
-    "id": 13,
-    "name": "Thiago Almeida",
-    "lastMessage": "Aguardando sua confirmação.",
-    "date": "10:20 AM"
+      "id": 13,
+      "name": "Liam Harris",
+      "lastMessage": "Você tem planos para o fim de semana?",
+      "lastSeen": null,
+      "date": "06:30 AM"
   },
   {
-    "id": 14,
-    "name": "Amanda Rocha",
-    "lastMessage": "Já enviei o documento.",
-    "date": "05:05 PM"
+      "id": 14,
+      "name": "Mona Evans",
+      "lastMessage": "Vamos sair para um café amanhã?",
+      "lastSeen": "12:50 PM",
+      "date": "09:05 AM"
   },
   {
-    "id": 15,
-    "name": "Luiz Oliveira",
-    "lastMessage": "Vamos nos encontrar amanhã?",
-    "date": "08:50 PM"
+      "id": 15,
+      "name": "Nina King",
+      "lastMessage": "Isso foi incrível, adorei!",
+      "lastSeen": null,
+      "date": "11:00 AM"
   },
   {
-    "id": 16,
-    "name": "Cláudia Santos",
-    "lastMessage": "Isso pode esperar até amanhã.",
-    "date": "11:45 PM"
+      "id": 16,
+      "name": "Oscar Lopez",
+      "lastMessage": "Podemos marcar para a próxima semana.",
+      "lastSeen": "06:45 AM",
+      "date": "10:35 PM"
   },
   {
-    "id": 17,
-    "name": "Daniela Souza",
-    "lastMessage": "Você chegou na cidade?",
-    "date": "07:30 PM"
+      "id": 17,
+      "name": "Paul Harris",
+      "lastMessage": "Estou indo agora.",
+      "lastSeen": null,
+      "date": "04:00 PM"
   },
   {
-    "id": 18,
-    "name": "Vinícius Costa",
-    "lastMessage": "Estou a caminho da sua casa.",
-    "date": "02:05 PM"
+      "id": 18,
+      "name": "Quinn Foster",
+      "lastMessage": "Vamos almoçar juntos amanhã?",
+      "lastSeen": "12:10 AM",
+      "date": "06:25 AM"
   },
   {
-    "id": 19,
-    "name": "Roberta Almeida",
-    "lastMessage": "Eu também adorei o evento!",
-    "date": "03:25 AM"
+      "id": 19,
+      "name": "Rachel Adams",
+      "lastMessage": "Eu te mando a resposta ainda hoje.",
+      "lastSeen": null,
+      "date": "02:00 PM"
   },
   {
-    "id": 20,
-    "name": "Fábio Rocha",
-    "lastMessage": "Aguardo sua resposta sobre a reunião.",
-    "date": "06:40 AM"
+      "id": 20,
+      "name": "Steve White",
+      "lastMessage": "Nos vemos em breve!",
+      "lastSeen": "05:10 PM",
+      "date": "01:10 AM"
+  },
+  {
+      "id": 21,
+      "name": "Tina Parker",
+      "lastMessage": "Estamos prontos para começar?",
+      "lastSeen": null,
+      "date": "06:00 PM"
+  },
+  {
+      "id": 22,
+      "name": "Ursula Bell",
+      "lastMessage": "Posso te ajudar com isso.",
+      "lastSeen": "11:40 AM",
+      "date": "03:20 PM"
+  },
+  {
+      "id": 23,
+      "name": "Victor Davis",
+      "lastMessage": "Isso foi rápido!",
+      "lastSeen": null,
+      "date": "05:50 AM"
+  },
+  {
+      "id": 24,
+      "name": "Wendy Clark",
+      "lastMessage": "Nos falamos depois.",
+      "lastSeen": "10:50 AM",
+      "date": "09:15 PM"
+  },
+  {
+      "id": 25,
+      "name": "Xander Young",
+      "lastMessage": "Fazemos isso amanhã!",
+      "lastSeen": null,
+      "date": "04:30 AM"
   }
 ]
-
