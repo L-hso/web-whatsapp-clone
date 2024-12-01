@@ -8,11 +8,10 @@ export default class Conversation {
     conversationPfpContainer.classList.add("conversation_pfp");
 
     const pfp = document.createElement("img");
-    pfp.src = "https://placehold.co/600";
+    pfp.src = data.pfp;
 
     conversationPfpContainer.appendChild(pfp);
 
-    conversationBlock.appendChild(conversationPfpContainer);
 
     const conversationInfo = document.createElement("hgroup");
 
@@ -27,10 +26,8 @@ export default class Conversation {
     conversationDate.classList.add("conversation_date");
     conversationDate.innerText = data.date;
 
-    conversationInfoTopside.appendChild(conversationName);
-    conversationInfoTopside.appendChild(conversationDate);
+    conversationInfoTopside.append(conversationName, conversationDate);
 
-    conversationInfo.appendChild(conversationInfoTopside);
 
     const conversationInfoBottomside = document.createElement("div");
     conversationInfoBottomside.classList.add("bottom_text");
@@ -43,7 +40,6 @@ export default class Conversation {
         <path d="M268-240 42-466l57-56 170 170 56 56-57 56Zm226 0L268-466l56-57 170 170 368-368 56 57-424 424Zm0-226-57-56 198-198 57 56-198 198Z" />
     </svg><span>${data.lastMessage}</span>`;
 
-    conversationInfoBottomside.appendChild(conversationLastMessage);
 
     const conversationOptions = document.createElement("button");
     conversationOptions.classList.add("conversation_options");
@@ -53,11 +49,11 @@ export default class Conversation {
                   <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
                 </svg>`;
 
-    conversationInfoBottomside.appendChild(conversationOptions);
+    conversationInfoBottomside.append(conversationLastMessage, conversationOptions);
 
-    conversationInfo.appendChild(conversationInfoBottomside);
+    conversationInfo.append(conversationInfoTopside, conversationInfoBottomside);
 
-    conversationBlock.appendChild(conversationInfo);
+    conversationBlock.append(conversationPfpContainer, conversationInfo);
 
     return conversationBlock;
   }
