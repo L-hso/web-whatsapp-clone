@@ -5,9 +5,10 @@ export class Dropdown {
    * @param {string} id
    * @param {string[]} options
    * @param {{x:number, y:number, marginX:string, marginY:string}} anchorPos
+   * @param {boolean} overflows
    * @returns
    */
-  static create(id, options, anchorPos) {
+  static create(id, options, anchorPos, overflows) {
     const menu = document.createElement("menu");
     menu.classList = "conversation_options_popover";
     menu.dataset.id = id;
@@ -26,11 +27,16 @@ export class Dropdown {
 
     let origin = "";
     
-    if (window.innerHeight * 0.625 <= anchorPos.y)  {
+    const posLimits = {
+      true: {min: 0.375, max: 0.625},
+      false: {min: 0.5, max: 0.5}
+    }
+
+    if (window.innerHeight * posLimits[overflows].max <= anchorPos.y)  {
       menu.style.bottom = `calc(${window.innerHeight - anchorPos.y}px)`;
       origin = "bottom";
 
-    } else  if (window.innerHeight * 0.375 > anchorPos.y){
+    } else  if (window.innerHeight * posLimits[overflows].min > anchorPos.y){
       menu.style.top = `calc(${anchorPos.marginY}rem + ${anchorPos.y}px)`;
       origin = "top";
     } else {
@@ -56,14 +62,16 @@ export class Dropdown {
 export class ChatActions {
   static create(chatId){
     const chat_actions = document.createElement("div");
+    chat_actions.classList = "chat_actions";
 
     const search_action = document.createElement("button");
+    search_action.classList.add("search_action");
     search_action.innerHTML = `<svg
               xmlns="http://www.w3.org/2000/svg"
-              height="20px"
+              height="24px"
               viewBox="0 -960 960 960"
-              width="20px"
-              fill="var(--gray-6)"
+              width="24px"
+              fill="var(--gray-9)"
             >
               <path
                 d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"
@@ -71,10 +79,11 @@ export class ChatActions {
             </svg>`;
 
     const options_action = document.createElement("button");
+    options_action.classList.add("options_action");
     options_action.innerHTML = `<svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
+                  width="20px"
+                  height="20px"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="var(--gray-9)"
@@ -87,6 +96,8 @@ export class ChatActions {
                   <circle cx="12" cy="5" r="1" />
                   <circle cx="12" cy="19" r="1" />
                 </svg>`;
+
+    chat_actions.append(search_action, options_action)
 
     return chat_actions;
   }
