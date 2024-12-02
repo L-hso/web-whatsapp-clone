@@ -2,7 +2,6 @@ import { Dropdown } from "./utils.js";
 import Conversation from "./conversation.js";
 import PrincipalPanel from "./principal_panel.js";
 
-
 /*---------------------- CONVERSATIONS AREA ----------------------*/
 function conversationsCreateContextMenu(
   e,
@@ -27,13 +26,13 @@ function conversationsCreateContextMenu(
         "Adicionar aos favoritos",
         "Bloquear",
       ],
-      blockPos
+      blockPos,
+      false
     );
 
     document.body.appendChild(menu);
   }
 }
-
 
 const messagesMain = document.querySelector("#messages main ul");
 
@@ -66,17 +65,17 @@ conversations.forEach((block) => {
 });
 /*-----------------------------------------------------------*/
 
-
 const navigationBar = document.querySelector("nav");
 
 const messagesArea = document.querySelector("#messages");
-
 
 /*---------------------- PRINCIPAL PANEL AREA ----------------------*/
 
 const principalPanel = document.querySelector("#principal_panel");
 
-principalPanel.appendChild(PrincipalPanel.createNochatPanel());
+principalPanel.appendChild(
+  PrincipalPanel.createChatPanel(conversationsData[0])
+);
 
 const principalPanelMutationObserver = new MutationObserver((mutationList) => {
   for (const mutation of mutationList) {
@@ -85,18 +84,13 @@ const principalPanelMutationObserver = new MutationObserver((mutationList) => {
     if (mutation.type === "attributes") {
       mutation.target.childNodes[0].remove();
 
-      if (mutation.target.dataset.chattype == "nochat") {
+      if (mutation.target.dataset.paneltype == "nochat") {
         mutation.target.appendChild(PrincipalPanel.createNochatPanel());
         return;
       }
 
-      if (mutation.target.dataset.chattype == "group") {
-        mutation.target.appendChild(PrincipalPanel.createGroupPanel());
-        return;
-      }
-
-      if (mutation.target.dataset.chattype == "person") {
-        mutation.target.appendChild(PrincipalPanel.createPersonPanel());
+      if (mutation.target.dataset.paneltype == "chat") {
+        mutation.target.appendChild(PrincipalPanel.createChatPanel());
         return;
       }
     }
@@ -105,56 +99,60 @@ const principalPanelMutationObserver = new MutationObserver((mutationList) => {
 
 principalPanelMutationObserver.observe(principalPanel, {
   attributes: true,
-  attributeFilter: ["data-chattype"],
+  attributeFilter: ["data-paneltype"],
 });
 
-principalPanel.addEventListener("contextmenu", (e) => {
-  e.preventDefault();
+principalPanel
+  .querySelector("#chat_main")
+  .addEventListener("contextmenu", (e) => {
+    e.preventDefault();
 
-  if (
-    !document.querySelector(".conversation_options_popover") &&
-    e.currentTarget.dataset.chattype != "nochat"
-  ) {
-    let options;
+    if (!document.querySelector(".conversation_options_popover")) {
+      let options;
 
-    if (e.currentTarget.dataset.chattype == "group") {
-      options = [
-        "Dados do grupo",
-        "Selecionar mensagens",
-        "Fechar conversa",
-        "Silenciar notificações",
-        "Mensagens temporárias",
-        "Limpar conversa",
-        "Sair do grupo",
-        "Adicionar aos favoritos",
-      ];
+      if (e.currentTarget.dataset.chattype == "group") {
+        options = [
+          "Dados do grupo",
+          "Selecionar mensagens",
+          "Fechar conversa",
+          "Silenciar notificações",
+          "Mensagens temporárias",
+          "Limpar conversa",
+          "Sair do grupo",
+          "Adicionar aos favoritos",
+        ];
+      }
+
+      if (e.currentTarget.dataset.chattype == "person") {
+        options = [
+          "Dados do contato",
+          "Selecionar mensagens",
+          "Fechar conversa",
+          "Silenciar notificações",
+          "Mensagens temporárias",
+          "Limpar conversa",
+          "Apagar conversa",
+          "Adicionar aos favoritos",
+          "Denunciar",
+          "Bloquear",
+        ];
+      }
+
+      const dropdown = Dropdown.create(
+        -1,
+        options,
+        {
+          x: e.clientX,
+          y: e.clientY,
+          marginX: "0",
+          marginY: "0",
+        },
+        true
+      );
+
+      document.body.appendChild(dropdown);
     }
-
-    if (e.currentTarget.dataset.chattype == "person") {
-      options = [
-        "Dados do contato",
-        "Selecionar mensagens",
-        "Fechar conversa",
-        "Silenciar notificações",
-        "Mensagens temporárias",
-        "Limpar conversa",
-        "Apagar conversa",
-        "Adicionar aos favoritos",
-        "Denunciar",
-        "Bloquear",
-      ];
-    }
-
-    const dropdown = Dropdown.create(-1, options, {
-      x: e.clientX,
-      y: e.clientY,
-      marginX: "0",
-      marginY: "0",
-    });
-
-    document.body.appendChild(dropdown);
-  }
-});
+  });
 
 /*-----------------------------------------------------------*/
 
