@@ -1,177 +1,403 @@
 [
-  {
+    {
       "id": 1,
-      "name": "Alice Johnson",
-      "lastMessage": "Olá, como você está?",
-      "lastSeen": "02:30 PM",
-      "date": "10:45 AM"
-  },
-  {
+      "name": "João",
+      "lastMessage": "Olá, tudo bem?",
+      "date": "03:15 PM",
+      "info": "03:00 PM",
+      "chattype": "person"
+    },
+    {
       "id": 2,
-      "name": "Bob Smith",
-      "lastMessage": "Vamos marcar de nos encontrar em breve!",
-      "lastSeen": "09:15 AM",
-      "date": "12:20 PM"
-  },
-  {
+      "name": "Família Silva",
+      "lastMessage": "Reunião de família amanhã?",
+      "date": "05:00 PM",
+      "info": ["João", "Maria", "Ana"],
+      "chattype": "group"
+    },
+    {
       "id": 3,
-      "name": "Carol Miller",
-      "lastMessage": "Estou quase chegando!",
-      "lastSeen": null,
-      "date": "04:25 AM"
-  },
-  {
+      "name": "Carlos",
+      "lastMessage": "Bom dia!",
+      "date": "08:30 AM",
+      "info": "08:15 AM",
+      "chattype": "person"
+    },
+    {
       "id": 4,
-      "name": "David Brown",
-      "lastMessage": "Boa noite, nos falamos amanhã!",
-      "lastSeen": "10:05 PM",
-      "date": "02:30 AM"
-  },
-  {
+      "name": "Amigos do Futebol",
+      "lastMessage": "Jogo marcado para o sábado!",
+      "date": "06:45 PM",
+      "info": ["Carlos", "Lucas", "Pedro", "Gustavo"],
+      "chattype": "group"
+    },
+    {
       "id": 5,
-      "name": "Eve White",
-      "lastMessage": "Isso é ótimo, não vejo a hora de começar!",
-      "lastSeen": null,
-      "date": "08:55 AM"
-  },
-  {
+      "name": "Ana",
+      "lastMessage": "Você vem para a festa?",
+      "date": "02:00 PM",
+      "info": "01:45 PM",
+      "chattype": "person"
+    },
+    {
       "id": 6,
-      "name": "Frank Green",
-      "lastMessage": "Me avise se precisar de ajuda com isso.",
-      "lastSeen": "11:20 AM",
-      "date": "01:35 PM"
-  },
-  {
+      "name": "Trabalho",
+      "lastMessage": "Reunião marcada para amanhã.",
+      "date": "09:00 AM",
+      "info": ["João", "Maria", "Paulo", "Clara"],
+      "chattype": "group"
+    },
+    {
       "id": 7,
-      "name": "Grace Black",
-      "lastMessage": "Eu adoraria te ver novamente!",
-      "lastSeen": null,
-      "date": "03:40 PM"
-  },
-  {
+      "name": "Pedro",
+      "lastMessage": "Como vai?",
+      "date": "10:30 AM",
+      "info": "10:15 AM",
+      "chattype": "person"
+    },
+    {
       "id": 8,
-      "name": "Hank Adams",
-      "lastMessage": "Estou no trabalho agora, mais tarde nos falamos.",
-      "lastSeen": "01:30 PM",
-      "date": "09:00 AM"
-  },
-  {
+      "name": "Turma do Colégio",
+      "lastMessage": "Vamos ao cinema?",
+      "date": "07:30 PM",
+      "info": ["Pedro", "João", "Lucas", "Mariana"],
+      "chattype": "group"
+    },
+    {
       "id": 9,
-      "name": "Ivy Nelson",
-      "lastMessage": "Você já viu o último episódio da série?",
-      "lastSeen": null,
-      "date": "10:10 AM"
-  },
-  {
+      "name": "Maria",
+      "lastMessage": "Ok, te aviso depois.",
+      "date": "01:00 PM",
+      "info": "12:45 PM",
+      "chattype": "person"
+    },
+    {
       "id": 10,
-      "name": "Jack Walker",
-      "lastMessage": "Com certeza, vamos marcar uma reunião!",
-      "lastSeen": "03:15 PM",
-      "date": "07:30 AM"
-  },
-  {
+      "name": "Escola",
+      "lastMessage": "Aula cancelada hoje.",
+      "date": "08:00 AM",
+      "info": ["Carlos", "Lucas", "João"],
+      "chattype": "group"
+    },
+    {
       "id": 11,
-      "name": "John Doe",
-      "lastMessage": "Precisamos conversar sobre isso mais tarde.",
-      "lastSeen": null,
-      "date": "06:25 PM"
-  },
-  {
+      "name": "Lucas",
+      "lastMessage": "Tudo certo, vou.",
+      "date": "02:45 PM",
+      "info": "02:30 PM",
+      "chattype": "person"
+    },
+    {
       "id": 12,
-      "name": "Kathy Taylor",
-      "lastMessage": "Estarei em casa em breve!",
-      "lastSeen": "08:50 PM",
-      "date": "02:15 AM"
-  },
-  {
+      "name": "Família Oliveira",
+      "lastMessage": "Vamos almoçar juntos?",
+      "date": "11:00 AM",
+      "info": ["João", "Maria", "José"],
+      "chattype": "group"
+    },
+    {
       "id": 13,
-      "name": "Liam Harris",
-      "lastMessage": "Você tem planos para o fim de semana?",
-      "lastSeen": null,
-      "date": "06:30 AM"
-  },
-  {
+      "name": "Carlos",
+      "lastMessage": "Qual o plano para hoje?",
+      "date": "05:30 PM",
+      "info": "05:15 PM",
+      "chattype": "person"
+    },
+    {
       "id": 14,
-      "name": "Mona Evans",
-      "lastMessage": "Vamos sair para um café amanhã?",
-      "lastSeen": "12:50 PM",
-      "date": "09:05 AM"
-  },
-  {
+      "name": "Equipe de Futebol",
+      "lastMessage": "Hora de treinar!",
+      "date": "07:00 PM",
+      "info": ["Carlos", "Lucas", "João", "Marcos"],
+      "chattype": "group"
+    },
+    {
       "id": 15,
-      "name": "Nina King",
-      "lastMessage": "Isso foi incrível, adorei!",
-      "lastSeen": null,
-      "date": "11:00 AM"
-  },
-  {
+      "name": "José",
+      "lastMessage": "Boa noite!",
+      "date": "09:15 PM",
+      "info": "09:00 PM",
+      "chattype": "person"
+    },
+    {
       "id": 16,
-      "name": "Oscar Lopez",
-      "lastMessage": "Podemos marcar para a próxima semana.",
-      "lastSeen": "06:45 AM",
-      "date": "10:35 PM"
-  },
-  {
+      "name": "Time de Vôlei",
+      "lastMessage": "Treino no fim de semana.",
+      "date": "04:00 PM",
+      "info": ["José", "Carlos", "Lucas", "Marcela"],
+      "chattype": "group"
+    },
+    {
       "id": 17,
-      "name": "Paul Harris",
-      "lastMessage": "Estou indo agora.",
-      "lastSeen": null,
-      "date": "04:00 PM"
-  },
-  {
+      "name": "Amanda",
+      "lastMessage": "Eu vou!",
+      "date": "03:30 PM",
+      "info": "03:15 PM",
+      "chattype": "person"
+    },
+    {
       "id": 18,
-      "name": "Quinn Foster",
-      "lastMessage": "Vamos almoçar juntos amanhã?",
-      "lastSeen": "12:10 AM",
-      "date": "06:25 AM"
-  },
-  {
+      "name": "Turma do Ensino Médio",
+      "lastMessage": "Prova de matemática?",
+      "date": "06:00 PM",
+      "info": ["Amanda", "Lucas", "Ricardo"],
+      "chattype": "group"
+    },
+    {
       "id": 19,
-      "name": "Rachel Adams",
-      "lastMessage": "Eu te mando a resposta ainda hoje.",
-      "lastSeen": null,
-      "date": "02:00 PM"
-  },
-  {
+      "name": "Paulo",
+      "lastMessage": "Que horas vamos?",
+      "date": "12:15 PM",
+      "info": "12:00 PM",
+      "chattype": "person"
+    },
+    {
       "id": 20,
-      "name": "Steve White",
-      "lastMessage": "Nos vemos em breve!",
-      "lastSeen": "05:10 PM",
-      "date": "01:10 AM"
-  },
-  {
+      "name": "Grupo de Estudo",
+      "lastMessage": "Revisão de física amanhã.",
+      "date": "03:45 PM",
+      "info": ["Paulo", "Lucas", "Mariana", "Ricardo"],
+      "chattype": "group"
+    },
+    {
       "id": 21,
-      "name": "Tina Parker",
-      "lastMessage": "Estamos prontos para começar?",
-      "lastSeen": null,
-      "date": "06:00 PM"
-  },
-  {
+      "name": "Felipe",
+      "lastMessage": "Cheguei!",
+      "date": "04:30 PM",
+      "info": "04:15 PM",
+      "chattype": "person"
+    },
+    {
       "id": 22,
-      "name": "Ursula Bell",
-      "lastMessage": "Posso te ajudar com isso.",
-      "lastSeen": "11:40 AM",
-      "date": "03:20 PM"
-  },
-  {
+      "name": "Amigos da Praia",
+      "lastMessage": "Vai ter churrasco no fim de semana.",
+      "date": "07:45 PM",
+      "info": ["Felipe", "Bruna", "Gustavo", "Tiago"],
+      "chattype": "group"
+    },
+    {
       "id": 23,
-      "name": "Victor Davis",
-      "lastMessage": "Isso foi rápido!",
-      "lastSeen": null,
-      "date": "05:50 AM"
-  },
-  {
+      "name": "Mariana",
+      "lastMessage": "Te vejo lá!",
+      "date": "05:30 PM",
+      "info": "05:15 PM",
+      "chattype": "person"
+    },
+    {
       "id": 24,
-      "name": "Wendy Clark",
-      "lastMessage": "Nos falamos depois.",
-      "lastSeen": "10:50 AM",
-      "date": "09:15 PM"
-  },
-  {
+      "name": "Equipe de Marketing",
+      "lastMessage": "O relatório precisa ser entregue amanhã.",
+      "date": "10:15 AM",
+      "info": ["Mariana", "Tiago", "Felipe"],
+      "chattype": "group"
+    },
+    {
       "id": 25,
-      "name": "Xander Young",
-      "lastMessage": "Fazemos isso amanhã!",
-      "lastSeen": null,
-      "date": "04:30 AM"
-  }
-]
+      "name": "Roberta",
+      "lastMessage": "Estou indo para a reunião.",
+      "date": "09:00 AM",
+      "info": "08:45 AM",
+      "chattype": "person"
+    },
+    {
+      "id": 26,
+      "name": "Grupo de Voluntários",
+      "lastMessage": "Ação de limpeza no sábado.",
+      "date": "02:00 PM",
+      "info": ["Roberta", "Paula", "Marcelo"],
+      "chattype": "group"
+    },
+    {
+      "id": 27,
+      "name": "Clara",
+      "lastMessage": "Que horas é o jantar?",
+      "date": "08:30 PM",
+      "info": "08:15 PM",
+      "chattype": "person"
+    },
+    {
+      "id": 28,
+      "name": "Turma de Arquitetura",
+      "lastMessage": "Projeto final está pronto.",
+      "date": "04:30 PM",
+      "info": ["Clara", "Giovana", "Renan"],
+      "chattype": "group"
+    },
+    {
+      "id": 29,
+      "name": "Thiago",
+      "lastMessage": "Estou indo!",
+      "date": "06:15 PM",
+      "info": "06:00 PM",
+      "chattype": "person"
+    },
+    {
+      "id": 30,
+      "name": "Time de Basket",
+      "lastMessage": "Treino mais tarde.",
+      "date": "07:30 PM",
+      "info": ["Thiago", "Lucas", "Carlos", "Eduardo"],
+      "chattype": "group"
+    },
+    {
+      "id": 31,
+      "name": "Bruna",
+      "lastMessage": "Que horas você chega?",
+      "date": "10:30 AM",
+      "info": "10:15 AM",
+      "chattype": "person"
+    },
+    {
+      "id": 32,
+      "name": "Equipe de Futebol Feminino",
+      "lastMessage": "Jogo marcado para a próxima sexta.",
+      "date": "06:30 PM",
+      "info": ["Bruna", "Camila", "Larissa"],
+      "chattype": "group"
+    },
+    {
+      "id": 33,
+      "name": "Ricardo",
+      "lastMessage": "Certo, vou te esperar.",
+      "date": "09:45 AM",
+      "info": "09:30 AM",
+      "chattype": "person"
+    },
+    {
+      "id": 34,
+      "name": "Café da Manhã",
+      "lastMessage": "Vamos nos encontrar amanhã.",
+      "date": "07:00 AM",
+      "info": ["Ricardo", "Lívia", "Fernanda"],
+      "chattype": "group"
+    },
+    {
+      "id": 35,
+      "name": "Lívia",
+      "lastMessage": "Acabei de acordar!",
+      "date": "08:00 AM",
+      "info": "07:45 AM",
+      "chattype": "person"
+    },
+    {
+      "id": 36,
+      "name": "Círculo de Leitura",
+      "lastMessage": "Vamos discutir o livro no fim de semana.",
+      "date": "03:00 PM",
+      "info": ["Lívia", "Júlia", "Marcelo"],
+      "chattype": "group"
+    },
+    {
+      "id": 37,
+      "name": "Júlia",
+      "lastMessage": "Estou indo para a biblioteca.",
+      "date": "09:00 AM",
+      "info": "08:45 AM",
+      "chattype": "person"
+    },
+    {
+      "id": 38,
+      "name": "Grupo de Ciências",
+      "lastMessage": "Revisão sobre biologia amanhã.",
+      "date": "01:30 PM",
+      "info": ["Júlia", "Cláudia", "Pedro"],
+      "chattype": "group"
+    },
+    {
+      "id": 39,
+      "name": "Gustavo",
+      "lastMessage": "Vou ao cinema depois.",
+      "date": "08:15 PM",
+      "info": "08:00 PM",
+      "chattype": "person"
+    },
+    {
+      "id": 40,
+      "name": "Relações Públicas",
+      "lastMessage": "Reunião importante amanhã.",
+      "date": "10:00 AM",
+      "info": ["Gustavo", "Fernando", "Sofia"],
+      "chattype": "group"
+    },
+    {
+      "id": 41,
+      "name": "Fernanda",
+      "lastMessage": "Te encontro mais tarde.",
+      "date": "07:00 PM",
+      "info": "06:45 PM",
+      "chattype": "person"
+    },
+    {
+      "id": 42,
+      "name": "Comida e Bebida",
+      "lastMessage": "Festa amanhã?",
+      "date": "08:30 PM",
+      "info": ["Fernanda", "Camila", "Gustavo"],
+      "chattype": "group"
+    },
+    {
+      "id": 43,
+      "name": "Eduardo",
+      "lastMessage": "Fui para o mercado.",
+      "date": "03:45 PM",
+      "info": "03:30 PM",
+      "chattype": "person"
+    },
+    {
+      "id": 44,
+      "name": "Grupo de Viagem",
+      "lastMessage": "Partimos na próxima sexta.",
+      "date": "09:15 AM",
+      "info": ["Eduardo", "Carlos", "Ricardo"],
+      "chattype": "group"
+    },
+    {
+      "id": 45,
+      "name": "Sofia",
+      "lastMessage": "Estou esperando você.",
+      "date": "05:00 PM",
+      "info": "04:45 PM",
+      "chattype": "person"
+    },
+    {
+      "id": 46,
+      "name": "Banda de Rock",
+      "lastMessage": "Ensaios de terça.",
+      "date": "08:00 PM",
+      "info": ["Sofia", "Lucas", "Túlio"],
+      "chattype": "group"
+    },
+    {
+      "id": 47,
+      "name": "Marcos",
+      "lastMessage": "Eu te ligo depois.",
+      "date": "02:15 PM",
+      "info": "02:00 PM",
+      "chattype": "person"
+    },
+    {
+      "id": 48,
+      "name": "Grupo de Investimentos",
+      "lastMessage": "Reunião para discutir novos projetos.",
+      "date": "11:45 AM",
+      "info": ["Marcos", "Lúcia", "Ricardo"],
+      "chattype": "group"
+    },
+    {
+      "id": 49,
+      "name": "Lúcia",
+      "lastMessage": "Já terminei o relatório.",
+      "date": "04:30 PM",
+      "info": "04:15 PM",
+      "chattype": "person"
+    },
+    {
+      "id": 50,
+      "name": "Grupo de Tecnologia",
+      "lastMessage": "Vamos marcar uma reunião de equipe.",
+      "date": "10:30 AM",
+      "info": ["Lúcia", "Ricardo", "Gustavo"],
+      "chattype": "group"
+    }
+  ]
+  
