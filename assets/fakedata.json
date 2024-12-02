@@ -4,7 +4,7 @@
       "name": "João",
       "lastMessage": "Olá, tudo bem?",
       "date": "03:15 PM",
-      "info": "03:00 PM",
+      "lastSeen": "03:00 PM",
       "chattype": "person"
     },
     {
@@ -12,7 +12,7 @@
       "name": "Família Silva",
       "lastMessage": "Reunião de família amanhã?",
       "date": "05:00 PM",
-      "info": ["João", "Maria", "Ana"],
+      "members": ["João", "Maria", "Ana", "você"],
       "chattype": "group"
     },
     {
@@ -20,7 +20,7 @@
       "name": "Carlos",
       "lastMessage": "Bom dia!",
       "date": "08:30 AM",
-      "info": "08:15 AM",
+      "lastSeen": "08:15 AM",
       "chattype": "person"
     },
     {
@@ -28,7 +28,7 @@
       "name": "Amigos do Futebol",
       "lastMessage": "Jogo marcado para o sábado!",
       "date": "06:45 PM",
-      "info": ["Carlos", "Lucas", "Pedro", "Gustavo"],
+      "members": ["Carlos", "Lucas", "Pedro", "Gustavo", "você"],
       "chattype": "group"
     },
     {
@@ -36,7 +36,7 @@
       "name": "Ana",
       "lastMessage": "Você vem para a festa?",
       "date": "02:00 PM",
-      "info": "01:45 PM",
+      "lastSeen": "01:45 PM",
       "chattype": "person"
     },
     {
@@ -44,7 +44,7 @@
       "name": "Trabalho",
       "lastMessage": "Reunião marcada para amanhã.",
       "date": "09:00 AM",
-      "info": ["João", "Maria", "Paulo", "Clara"],
+      "members": ["João", "Maria", "Paulo", "Clara", "você"],
       "chattype": "group"
     },
     {
@@ -52,7 +52,7 @@
       "name": "Pedro",
       "lastMessage": "Como vai?",
       "date": "10:30 AM",
-      "info": "10:15 AM",
+      "lastSeen": "10:15 AM",
       "chattype": "person"
     },
     {
@@ -60,7 +60,7 @@
       "name": "Turma do Colégio",
       "lastMessage": "Vamos ao cinema?",
       "date": "07:30 PM",
-      "info": ["Pedro", "João", "Lucas", "Mariana"],
+      "members": ["Pedro", "João", "Lucas", "Mariana", "você"],
       "chattype": "group"
     },
     {
@@ -68,7 +68,7 @@
       "name": "Maria",
       "lastMessage": "Ok, te aviso depois.",
       "date": "01:00 PM",
-      "info": "12:45 PM",
+      "lastSeen": "12:45 PM",
       "chattype": "person"
     },
     {
@@ -76,7 +76,7 @@
       "name": "Escola",
       "lastMessage": "Aula cancelada hoje.",
       "date": "08:00 AM",
-      "info": ["Carlos", "Lucas", "João"],
+      "members": ["Carlos", "Lucas", "João", "você"],
       "chattype": "group"
     },
     {
@@ -84,7 +84,7 @@
       "name": "Lucas",
       "lastMessage": "Tudo certo, vou.",
       "date": "02:45 PM",
-      "info": "02:30 PM",
+      "lastSeen": "02:30 PM",
       "chattype": "person"
     },
     {
@@ -92,7 +92,7 @@
       "name": "Família Oliveira",
       "lastMessage": "Vamos almoçar juntos?",
       "date": "11:00 AM",
-      "info": ["João", "Maria", "José"],
+      "members": ["João", "Maria", "José", "você"],
       "chattype": "group"
     },
     {
@@ -100,7 +100,7 @@
       "name": "Carlos",
       "lastMessage": "Qual o plano para hoje?",
       "date": "05:30 PM",
-      "info": "05:15 PM",
+      "lastSeen": "05:15 PM",
       "chattype": "person"
     },
     {
@@ -108,7 +108,7 @@
       "name": "Equipe de Futebol",
       "lastMessage": "Hora de treinar!",
       "date": "07:00 PM",
-      "info": ["Carlos", "Lucas", "João", "Marcos"],
+      "members": ["Carlos", "Lucas", "João", "Marcos", "você"],
       "chattype": "group"
     },
     {
@@ -116,7 +116,7 @@
       "name": "José",
       "lastMessage": "Boa noite!",
       "date": "09:15 PM",
-      "info": "09:00 PM",
+      "lastSeen": "09:00 PM",
       "chattype": "person"
     },
     {
@@ -124,7 +124,7 @@
       "name": "Time de Vôlei",
       "lastMessage": "Treino no fim de semana.",
       "date": "04:00 PM",
-      "info": ["José", "Carlos", "Lucas", "Marcela"],
+      "members": ["José", "Carlos", "Lucas", "Marcela", "você"],
       "chattype": "group"
     },
     {
@@ -132,7 +132,7 @@
       "name": "Amanda",
       "lastMessage": "Eu vou!",
       "date": "03:30 PM",
-      "info": "03:15 PM",
+      "lastSeen": "03:15 PM",
       "chattype": "person"
     },
     {
@@ -140,7 +140,7 @@
       "name": "Turma do Ensino Médio",
       "lastMessage": "Prova de matemática?",
       "date": "06:00 PM",
-      "info": ["Amanda", "Lucas", "Ricardo"],
+      "members": ["Amanda", "Lucas", "Ricardo", "você"],
       "chattype": "group"
     },
     {
@@ -148,7 +148,7 @@
       "name": "Paulo",
       "lastMessage": "Que horas vamos?",
       "date": "12:15 PM",
-      "info": "12:00 PM",
+      "lastSeen": "12:00 PM",
       "chattype": "person"
     },
     {
@@ -156,7 +156,7 @@
       "name": "Grupo de Estudo",
       "lastMessage": "Revisão de física amanhã.",
       "date": "03:45 PM",
-      "info": ["Paulo", "Lucas", "Mariana", "Ricardo"],
+      "members": ["Paulo", "Lucas", "Mariana", "Ricardo", "você"],
       "chattype": "group"
     },
     {
@@ -164,7 +164,7 @@
       "name": "Felipe",
       "lastMessage": "Cheguei!",
       "date": "04:30 PM",
-      "info": "04:15 PM",
+      "lastSeen": "04:15 PM",
       "chattype": "person"
     },
     {
@@ -172,7 +172,7 @@
       "name": "Amigos da Praia",
       "lastMessage": "Vai ter churrasco no fim de semana.",
       "date": "07:45 PM",
-      "info": ["Felipe", "Bruna", "Gustavo", "Tiago"],
+      "members": ["Felipe", "Bruna", "Gustavo", "Tiago", "você"],
       "chattype": "group"
     },
     {
@@ -180,7 +180,7 @@
       "name": "Mariana",
       "lastMessage": "Te vejo lá!",
       "date": "05:30 PM",
-      "info": "05:15 PM",
+      "lastSeen": "05:15 PM",
       "chattype": "person"
     },
     {
@@ -188,7 +188,7 @@
       "name": "Equipe de Marketing",
       "lastMessage": "O relatório precisa ser entregue amanhã.",
       "date": "10:15 AM",
-      "info": ["Mariana", "Tiago", "Felipe"],
+      "members": ["Mariana", "Tiago", "Felipe", "você"],
       "chattype": "group"
     },
     {
@@ -196,7 +196,7 @@
       "name": "Roberta",
       "lastMessage": "Estou indo para a reunião.",
       "date": "09:00 AM",
-      "info": "08:45 AM",
+      "lastSeen": "08:45 AM",
       "chattype": "person"
     },
     {
@@ -204,7 +204,7 @@
       "name": "Grupo de Voluntários",
       "lastMessage": "Ação de limpeza no sábado.",
       "date": "02:00 PM",
-      "info": ["Roberta", "Paula", "Marcelo"],
+      "members": ["Roberta", "Paula", "Marcelo", "você"],
       "chattype": "group"
     },
     {
@@ -212,7 +212,7 @@
       "name": "Clara",
       "lastMessage": "Que horas é o jantar?",
       "date": "08:30 PM",
-      "info": "08:15 PM",
+      "lastSeen": "08:15 PM",
       "chattype": "person"
     },
     {
@@ -220,7 +220,7 @@
       "name": "Turma de Arquitetura",
       "lastMessage": "Projeto final está pronto.",
       "date": "04:30 PM",
-      "info": ["Clara", "Giovana", "Renan"],
+      "members": ["Clara", "Giovana", "Renan", "você"],
       "chattype": "group"
     },
     {
@@ -228,7 +228,7 @@
       "name": "Thiago",
       "lastMessage": "Estou indo!",
       "date": "06:15 PM",
-      "info": "06:00 PM",
+      "lastSeen": "06:00 PM",
       "chattype": "person"
     },
     {
@@ -236,23 +236,23 @@
       "name": "Time de Basket",
       "lastMessage": "Treino mais tarde.",
       "date": "07:30 PM",
-      "info": ["Thiago", "Lucas", "Carlos", "Eduardo"],
+      "members": ["Thiago", "Marcelo", "Lucas", "você"],
       "chattype": "group"
     },
     {
       "id": 31,
-      "name": "Bruna",
-      "lastMessage": "Que horas você chega?",
-      "date": "10:30 AM",
-      "info": "10:15 AM",
+      "name": "Roberta",
+      "lastMessage": "Como está o projeto?",
+      "date": "11:45 AM",
+      "lastSeen": "11:30 AM",
       "chattype": "person"
     },
     {
       "id": 32,
-      "name": "Equipe de Futebol Feminino",
-      "lastMessage": "Jogo marcado para a próxima sexta.",
-      "date": "06:30 PM",
-      "info": ["Bruna", "Camila", "Larissa"],
+      "name": "Grupo de Fotografia",
+      "lastMessage": "Vamos fazer a sessão no domingo.",
+      "date": "02:15 PM",
+      "members": ["Roberta", "José", "Lúcia", "você"],
       "chattype": "group"
     },
     {
@@ -260,7 +260,7 @@
       "name": "Ricardo",
       "lastMessage": "Certo, vou te esperar.",
       "date": "09:45 AM",
-      "info": "09:30 AM",
+      "lastSeen": "09:30 AM",
       "chattype": "person"
     },
     {
@@ -268,7 +268,7 @@
       "name": "Café da Manhã",
       "lastMessage": "Vamos nos encontrar amanhã.",
       "date": "07:00 AM",
-      "info": ["Ricardo", "Lívia", "Fernanda"],
+      "members": ["Ricardo", "Lívia", "Fernanda", "você"],
       "chattype": "group"
     },
     {
@@ -276,7 +276,7 @@
       "name": "Lívia",
       "lastMessage": "Acabei de acordar!",
       "date": "08:00 AM",
-      "info": "07:45 AM",
+      "lastSeen": "07:45 AM",
       "chattype": "person"
     },
     {
@@ -284,7 +284,7 @@
       "name": "Círculo de Leitura",
       "lastMessage": "Vamos discutir o livro no fim de semana.",
       "date": "03:00 PM",
-      "info": ["Lívia", "Júlia", "Marcelo"],
+      "members": ["Lívia", "Júlia", "Marcelo", "você"],
       "chattype": "group"
     },
     {
@@ -292,7 +292,7 @@
       "name": "Júlia",
       "lastMessage": "Estou indo para a biblioteca.",
       "date": "09:00 AM",
-      "info": "08:45 AM",
+      "lastSeen": "08:45 AM",
       "chattype": "person"
     },
     {
@@ -300,7 +300,7 @@
       "name": "Grupo de Ciências",
       "lastMessage": "Revisão sobre biologia amanhã.",
       "date": "01:30 PM",
-      "info": ["Júlia", "Cláudia", "Pedro"],
+      "members": ["Júlia", "Cláudia", "Pedro", "você"],
       "chattype": "group"
     },
     {
@@ -308,7 +308,7 @@
       "name": "Gustavo",
       "lastMessage": "Vou ao cinema depois.",
       "date": "08:15 PM",
-      "info": "08:00 PM",
+      "lastSeen": "08:00 PM",
       "chattype": "person"
     },
     {
@@ -316,7 +316,7 @@
       "name": "Relações Públicas",
       "lastMessage": "Reunião importante amanhã.",
       "date": "10:00 AM",
-      "info": ["Gustavo", "Fernando", "Sofia"],
+      "members": ["Gustavo", "Fernando", "Sofia", "você"],
       "chattype": "group"
     },
     {
@@ -324,7 +324,7 @@
       "name": "Fernanda",
       "lastMessage": "Te encontro mais tarde.",
       "date": "07:00 PM",
-      "info": "06:45 PM",
+      "lastSeen": "06:45 PM",
       "chattype": "person"
     },
     {
@@ -332,7 +332,7 @@
       "name": "Comida e Bebida",
       "lastMessage": "Festa amanhã?",
       "date": "08:30 PM",
-      "info": ["Fernanda", "Camila", "Gustavo"],
+      "members": ["Fernanda", "Camila", "Gustavo", "você"],
       "chattype": "group"
     },
     {
@@ -340,7 +340,7 @@
       "name": "Eduardo",
       "lastMessage": "Fui para o mercado.",
       "date": "03:45 PM",
-      "info": "03:30 PM",
+      "lastSeen": "03:30 PM",
       "chattype": "person"
     },
     {
@@ -348,7 +348,7 @@
       "name": "Grupo de Viagem",
       "lastMessage": "Partimos na próxima sexta.",
       "date": "09:15 AM",
-      "info": ["Eduardo", "Carlos", "Ricardo"],
+      "members": ["Eduardo", "Carlos", "Ricardo", "você"],
       "chattype": "group"
     },
     {
@@ -356,7 +356,7 @@
       "name": "Sofia",
       "lastMessage": "Estou esperando você.",
       "date": "05:00 PM",
-      "info": "04:45 PM",
+      "lastSeen": "04:45 PM",
       "chattype": "person"
     },
     {
@@ -364,7 +364,7 @@
       "name": "Banda de Rock",
       "lastMessage": "Ensaios de terça.",
       "date": "08:00 PM",
-      "info": ["Sofia", "Lucas", "Túlio"],
+      "members": ["Sofia", "Lucas", "Túlio", "você"],
       "chattype": "group"
     },
     {
@@ -372,7 +372,7 @@
       "name": "Marcos",
       "lastMessage": "Eu te ligo depois.",
       "date": "02:15 PM",
-      "info": "02:00 PM",
+      "lastSeen": "02:00 PM",
       "chattype": "person"
     },
     {
@@ -380,7 +380,7 @@
       "name": "Grupo de Investimentos",
       "lastMessage": "Reunião para discutir novos projetos.",
       "date": "11:45 AM",
-      "info": ["Marcos", "Lúcia", "Ricardo"],
+      "members": ["Marcos", "Lúcia", "Ricardo", "você"],
       "chattype": "group"
     },
     {
@@ -388,7 +388,7 @@
       "name": "Lúcia",
       "lastMessage": "Já terminei o relatório.",
       "date": "04:30 PM",
-      "info": "04:15 PM",
+      "lastSeen": "04:15 PM",
       "chattype": "person"
     },
     {
@@ -396,7 +396,7 @@
       "name": "Grupo de Tecnologia",
       "lastMessage": "Vamos marcar uma reunião de equipe.",
       "date": "10:30 AM",
-      "info": ["Lúcia", "Ricardo", "Gustavo"],
+      "members": ["Lúcia", "Ricardo", "Gustavo", "você"],
       "chattype": "group"
     }
   ]
