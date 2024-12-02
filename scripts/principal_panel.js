@@ -165,19 +165,21 @@ export default class PrincipalPanel {
 
     const chat_info = document.createElement("span");
     chat_info.id = "chat_info";
-    chat_info.innerText = data.type == "group" ? data.members : "Clique para ver os dados do contato" ;
 
-    if (data.lastSeen && data.type != "group") {
-      setInterval(() => {
-        chat_info.innerText =
-          chat_info.innerText == "Clique para ver os dados do contato"
-            ? `Visto por último hoje às ${data.lastSeen}`
-            : "Clique para ver os dados do contato";
-      }, 60000);
-    } else {
+    chat_info.innerText = "Clique para ver os dados do contato";
+
+    if(!data.lastSeen && data.chattype == "person"){
       setTimeout(() => {
         chat_info.remove();
       }, 3000);
+    } else {
+      setInterval(() => {
+          chat_info.innerText =
+          chat_info.innerText == "Clique para ver os dados do contato"
+            ? (data.chattype == "group" ? data.members.join(", ") : `Visto por último hoje às ${data.lastSeen}`)
+            : "Clique para ver os dados do contato";
+        
+      }, 60000);
     }
 
     const chat_actions = ChatActions.create(data.id);
