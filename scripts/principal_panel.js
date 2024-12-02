@@ -1,3 +1,5 @@
+import { ChatActions } from "./utils.js";
+
 export default class PrincipalPanel {
   static createNochatPanel() {
     const nochat_panel = document.createElement("div");
@@ -113,16 +115,12 @@ export default class PrincipalPanel {
     const nochat_title = document.createElement("h1");
     nochat_title.innerText = "Whatsapp Web";
 
-    nochat_message.appendChild(nochat_title);
-
     const nochat_text = document.createElement("p");
     nochat_text.innerHTML = `Envie e receba mensagens sem precisar manter seu celular conectado à
           internet.<br />Use o whatsapp em até quatro dispositivos conectados a
           um celular ao mesmo tempo.`;
 
-    nochat_message.appendChild(nochat_text);
-
-    nochat_panel.appendChild(nochat_message);
+    nochat_message.append(nochat_title, nochat_text);
 
     const nochat_advice = document.createElement("span");
     nochat_advice.innerHTML = `<svg
@@ -140,16 +138,85 @@ export default class PrincipalPanel {
         ></path></svg> Suas mensagens pessoais são protegidas com a criptografia de ponta a
       ponta`;
 
-    nochat_panel.appendChild(nochat_advice);
+    nochat_panel.append(nochat_message, nochat_advice);
 
     return nochat_panel;
   }
 
-  static createPersonPanel() {
-    return document.createElement("div");
+  static createChatPanel(data) {
+    const chat_panel = document.createElement("div");
+    chat_panel.id = "chat_panel";
+    chat_panel.dataset.chatId = data.id;
+
+    const chat_header = document.createElement("header");
+    chat_header.id = "chat_header";
+
+    const wrapper = document.createElement("div");
+
+    const chat_pfp = document.createElement("img");
+    chat_pfp.id = "chat_pfp";
+    chat_pfp.src = data.pfp ?? "https://placehold.co/600";
+
+    const text_container = document.createElement("hgroup");
+
+    const chat_name = document.createElement("span");
+    chat_name.id = "chat_name";
+    chat_name.innerText = data.name;
+
+    const chat_info = document.createElement("span");
+    chat_info.id = "chat_info";
+    chat_info.innerText = data.type == "group" ? data.members : "Clique para ver os dados do contato" ;
+
+    if (data.lastSeen && data.type != "group") {
+      setInterval(() => {
+        chat_info.innerText =
+          chat_info.innerText == "Clique para ver os dados do contato"
+            ? `Visto por último hoje às ${data.lastSeen}`
+            : "Clique para ver os dados do contato";
+      }, 60000);
+    } else {
+      setTimeout(() => {
+        chat_info.remove();
+      }, 3000);
+    }
+
+    const chat_actions = ChatActions.create(data.id);
+
+    text_container.append(chat_name, chat_info);
+
+    wrapper.append(chat_pfp, text_container);
+
+    chat_header.append(wrapper, chat_actions);
+
+    const chat_main = document.createElement("main");
+    chat_main.id = "chat_main";
+    chat_main.dataset.chattype = data.chattype;
+    
+    const chat_message_bar = document.createElement("footer");
+    chat_message_bar.id = "chat_message_bar";
+
+    const emoji_picker = document.createElement("button");
+    emoji_picker.innerHTML = `<svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"><title>smiley</title><path fill="currentColor" d="M9.153,11.603c0.795,0,1.439-0.879,1.439-1.962S9.948,7.679,9.153,7.679 S7.714,8.558,7.714,9.641S8.358,11.603,9.153,11.603z M5.949,12.965c-0.026-0.307-0.131,5.218,6.063,5.551 c6.066-0.25,6.066-5.551,6.066-5.551C12,14.381,5.949,12.965,5.949,12.965z M17.312,14.073c0,0-0.669,1.959-5.051,1.959 c-3.505,0-5.388-1.164-5.607-1.959C6.654,14.073,12.566,15.128,17.312,14.073z M11.804,1.011c-6.195,0-10.826,5.022-10.826,11.217 s4.826,10.761,11.021,10.761S23.02,18.423,23.02,12.228C23.021,6.033,17.999,1.011,11.804,1.011z M12,21.354 c-5.273,0-9.381-3.886-9.381-9.159s3.942-9.548,9.215-9.548s9.548,4.275,9.548,9.548C21.381,17.467,17.273,21.354,12,21.354z  M15.108,11.603c0.795,0,1.439-0.879,1.439-1.962s-0.644-1.962-1.439-1.962s-1.439,0.879-1.439,1.962S14.313,11.603,15.108,11.603z"></path></svg>`;
+    
+    const media_picker = document.createElement("button");
+    media_picker.innerHTML = `<svg viewBox="0 0 24 24" width="30" preserveAspectRatio="xMidYMid meet"><title>plus</title><path fill="currentColor" d="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6V13z"></path></svg>`
+
+    const input_bar = document.createElement("input");
+    input_bar.placeholder = "Digite uma mensagem";
+
+    const audio_button = document.createElement("button");
+    audio_button.innerHTML = `<svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"><title>ptt</title><path fill="currentColor" d="M11.999,14.942c2.001,0,3.531-1.53,3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531 S8.469,2.35,8.469,4.35v7.061C8.469,13.412,9.999,14.942,11.999,14.942z M18.237,11.412c0,3.531-2.942,6.002-6.237,6.002 s-6.237-2.471-6.237-6.002H3.761c0,4.001,3.178,7.297,7.061,7.885v3.884h2.354v-3.884c3.884-0.588,7.061-3.884,7.061-7.885 L18.237,11.412z"></path></svg>`;
+    
+    chat_message_bar.append(
+      emoji_picker,
+      media_picker,
+      input_bar,
+      audio_button
+    );
+    
+    chat_panel.append(chat_header, chat_main, chat_message_bar);
+
+    return chat_panel;
   }
 
-  static createGroupPanel() {
-    return document.createElement("div");
-  }
 }
