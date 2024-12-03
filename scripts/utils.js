@@ -102,3 +102,8 @@ export class ChatActions {
     return chat_actions;
   }
 }
+
+
+export function make(element){
+  return document.createElement(element);
+}
