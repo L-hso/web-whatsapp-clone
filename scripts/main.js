@@ -7,7 +7,7 @@ function conversationsCreateContextMenu(
   e,
   { x = e.clientX, y = e.clientY, marginX, marginY }
 ) {
-  const popover = document.querySelector(".conversation_options_popover");
+  const popover = document.querySelector(".dropdown");
 
   e.stopImmediatePropagation();
   e.preventDefault();
@@ -40,8 +40,8 @@ const conversationsData = await fetch("../assets/fakedata.json").then(
   (response) => response.json()
 );
 
-await conversationsData.forEach((data) => {
-  messagesMain.appendChild(Conversation.create(data));
+await conversationsData[0].forEach((data) => {
+  messagesMain.appendChild(Conversation.create(data, conversationsCreateContextMenu));
 });
 
 const conversations = document.querySelectorAll(
@@ -49,33 +49,17 @@ const conversations = document.querySelectorAll(
 );
 
 conversations.forEach((block) => {
-  const conversationOptions = block.querySelector(".conversation_options");
-
-  conversationOptions.addEventListener("click", (e) => {
-    conversationsCreateContextMenu(e, {
-      x: e.target.getBoundingClientRect().x,
-      y: e.target.getBoundingClientRect().y,
-      marginX: "1.5",
-      marginY: "1.5",
-    });
-  });
   block.addEventListener("contextmenu", (e) => {
     conversationsCreateContextMenu(e, { marginX: "0", marginY: "0" });
   });
 });
 /*-----------------------------------------------------------*/
 
-const navigationBar = document.querySelector("nav");
-
-const messagesArea = document.querySelector("#messages");
-
 /*---------------------- PRINCIPAL PANEL AREA ----------------------*/
 
 const principalPanel = document.querySelector("#principal_panel");
 
-principalPanel.appendChild(
-  PrincipalPanel.createChatPanel(conversationsData[0])
-);
+principalPanel.appendChild(PrincipalPanel.createChatPanel(conversationsData[0][0], conversationsData[1][0]["messages"]));
 
 const principalPanelMutationObserver = new MutationObserver((mutationList) => {
   for (const mutation of mutationList) {
@@ -107,7 +91,7 @@ principalPanel
   .addEventListener("contextmenu", (e) => {
     e.preventDefault();
 
-    if (!document.querySelector(".conversation_options_popover")) {
+    if (!document.querySelector(".dropdown")) {
       let options;
 
       if (e.currentTarget.dataset.chattype == "group") {
@@ -157,7 +141,7 @@ principalPanel
 /*-----------------------------------------------------------*/
 
 document.body.addEventListener("mousedown", () => {
-  const popover = document.querySelector(".conversation_options_popover");
+  const popover = document.querySelector(".dropdown");
 
   if (popover != null) {
     popover.animate([{ transform: "scale(0)", opacity: 0 }], {
