@@ -1,4 +1,5 @@
 [
+  [
     {
       "id": 1,
       "name": "João",
@@ -399,5 +400,42 @@
       "members": ["Lúcia", "Ricardo", "Gustavo", "você"],
       "chattype": "group"
     }
+  ],
+  [
+    {
+      "id": 1,
+      "messages":[
+        {
+          "sender":"Me",
+          "content": "Bom dia!",
+          "date": "08:00 AM"
+        },
+        {
+          "sender":"João",
+          "content":"Bom dia! Tudo bem?",
+          "date":"08:15 AM"
+        },
+        {
+          "sender":"João",
+          "content":"Preciso de você para algo",
+          "date":"08:16 AM"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "messages":[
+        {
+          "sender":"Me",
+          "content": "Bom dia!",
+          "date": "08:00 AM"
+        },
+        {
+          "sender":"João",
+          "content":"Bom dia! Tudo bem?",
+          "date":"08:15 AM"
+        }
+      ]
+    }
   ]
-  
+]
