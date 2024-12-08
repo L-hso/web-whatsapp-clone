@@ -10,7 +10,7 @@ export class Dropdown {
    */
   static create(id, options, anchorPos, overflows) {
     const menu = document.createElement("menu");
-    menu.classList = "conversation_options_popover";
+    menu.classList = "dropdown";
     menu.dataset.id = id;
 
     for (const option of options) {
@@ -23,6 +23,7 @@ export class Dropdown {
       li.appendChild(button);
       menu.appendChild(li);
     }
+    
     menu.style.position = "absolute";
 
     let origin = "";
@@ -55,6 +56,9 @@ export class Dropdown {
     menu.style.transformOrigin = origin;
 
     menu.style.animation = "expand 0.33s ease";
+
+    
+
     return menu;
   }
 }
@@ -103,7 +107,11 @@ export class ChatActions {
   }
 }
 
-
+/**
+ * Abstraction of document.createElement
+ * @param { HTMLElement } element 
+ * @returns 
+ */
 export function make(element){
   return document.createElement(element);
 }
