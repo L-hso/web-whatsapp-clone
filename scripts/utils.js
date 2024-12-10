@@ -115,3 +115,22 @@ export class ChatActions {
 export function make(element){
   return document.createElement(element);
 }
+/**
+ * Takes a date object and return the formated date
+ * @param {Date} date The Date object from the moment that the function is called
+ * @param {boolean} AMPM If true the return will be in AM PM format
+ * @returns 
+ */
+export function formatDate(date, AMPM=false){
+  let formatedDate;
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+
+  if(AMPM){
+    formatedDate = `${(hours - 12).toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")} ${hours > 11? "PM" : "AM"}`
+  } else {
+    formatedDate = `${hours.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}`;
+  }
+  
+  return formatedDate;
+}
