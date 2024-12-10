@@ -1,4 +1,4 @@
-import { ChatActions, make, Dropdown } from "./utils.js";
+import { ChatActions, make, Dropdown, formatDate } from "./utils.js";
 
 export default class PrincipalPanel {
   static createNochatPanel() {
@@ -142,8 +142,19 @@ export default class PrincipalPanel {
 
     return nochat_panel;
   }
-
+  /**
+   *
+   * @param {{id: number, name: string, members?:string[], pfp: string, lastSeen: string, date: string, group: boolean}} data
+   * @param {{sender: string, content: string, date: string}[]} messages
+   * @returns { HTMLDivElement }
+   */
   static createChatPanel(data, messages) {
+    let members_colors = new Map();
+
+    if (data.group) {
+      data.members.forEach((member) => members_colors.set(member, generateRandomColor()));
+    }
+
     const chat_panel = make("div");
     chat_panel.id = "chat_panel";
     chat_panel.dataset.chatId = data.id;
@@ -168,7 +179,7 @@ export default class PrincipalPanel {
 
     chat_info.innerText = "Clique para ver os dados do contato";
 
-    if (!data.lastSeen && data.chattype == "person") {
+    if (!data.lastSeen && data.group) {
       setTimeout(() => {
         chat_info.remove();
       }, 3000);
@@ -176,7 +187,7 @@ export default class PrincipalPanel {
       setInterval(() => {
         chat_info.innerText =
           chat_info.innerText == "Clique para ver os dados do contato"
-            ? data.chattype == "group"
+            ? data.group
               ? data.members.join(", ")
               : `Visto por último hoje às ${data.lastSeen}`
             : "Clique para ver os dados do contato";
@@ -190,13 +201,19 @@ export default class PrincipalPanel {
     wrapper.append(chat_pfp, text_container);
 
     chat_header.append(wrapper, chat_actions);
-
     const chat_main = make("main");
     chat_main.id = "chat_main";
-    chat_main.dataset.chattype = data.chattype;
+    chat_main.dataset.group = data.group;
 
-    messages.forEach((message_data) => {
-      chat_main.appendChild(Message.create(message_data));
+    messages.forEach((message_data, ind, messages) => {
+      chat_main.appendChild(
+        Message.create(
+          message_data,
+          data.group == true,
+          ind > 0 && messages[ind - 1].sender == message_data.sender,
+          members_colors
+        )
+      );
     });
 
     const chat_message_bar = make("footer");
@@ -211,6 +228,15 @@ export default class PrincipalPanel {
     const input_bar = make("input");
     input_bar.placeholder = "Digite uma mensagem";
 
+    window.addEventListener("keydown", (e)=>{
+      if(e.key == "Enter" && input_bar.value != ""){
+        chat_main.appendChild(Message.create({sender:"Me", content: input_bar.value, date: formatDate(new Date(), true) }, false, chat_main.lastChild.dataset.mine == "true"));
+        input_bar.value = "";
+        chat_main.scrollBy(0 , chat_main.scrollHeight);
+      }
+      
+    })
+
     const audio_button = make("button");
     audio_button.innerHTML = `<svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"><title>ptt</title><path fill="currentColor" d="M11.999,14.942c2.001,0,3.531-1.53,3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531 S8.469,2.35,8.469,4.35v7.061C8.469,13.412,9.999,14.942,11.999,14.942z M18.237,11.412c0,3.531-2.942,6.002-6.237,6.002 s-6.237-2.471-6.237-6.002H3.761c0,4.001,3.178,7.297,7.061,7.885v3.884h2.354v-3.884c3.884-0.588,7.061-3.884,7.061-7.885 L18.237,11.412z"></path></svg>`;
 
@@ -223,19 +249,30 @@ export default class PrincipalPanel {
 
     chat_panel.append(chat_header, chat_main, chat_message_bar);
 
+    
+
     return chat_panel;
   }
 }
 
 class Message {
-  static create(data, group = false) {
+  /**
+   *
+   * @param {{sender: string, content: string, date: string}} data
+   * @param {boolean} group
+   * @param {boolean} sequence
+   * @param {Map<string, string>} colors
+   * @returns { HTMLDivElement }
+   */
+  static create(data, group = false, sequence = false, colors = new Map()) {
     const message = make("div");
     message.classList.add("chat_message");
-    
+
     const message_arrow = make("span");
     message_arrow.classList.add("chat_message_arrow");
 
     const message_body = make("div");
+
 
     let message_sender_name;
 
@@ -267,20 +304,31 @@ class Message {
           x: e.target.getBoundingClientRect().x,
           y: e.target.getBoundingClientRect().y,
           marginX: "0",
-          marginY: "1",
+          marginY: "1.5",
         };
+
         document.body.appendChild(
           Dropdown.create(
             data.id,
-            [
-              "Responder",
-              "Reagir",
-              "Encaminhar",
-              "Fixar",
-              "Favoritar",
-              "Denunciar",
-              "Apagar",
-            ],
+            data.sender != "Me"
+              ? [
+                  "Responder",
+                  "Reagir",
+                  "Encaminhar",
+                  "Fixar",
+                  "Favoritar",
+                  "Denunciar",
+                  "Apagar",
+                ]
+              : [
+                  "Dados da mensagem",
+                  "Responder",
+                  "Reagir",
+                  "Encaminhar",
+                  "Fixar",
+                  "Favoritar",
+                  "Apagar",
+                ],
             pos,
             false
           )
@@ -291,10 +339,11 @@ class Message {
     message_contentdate_wrapper.append(message_content, message_date);
 
     if (data.sender != "Me") {
-      if (group) {
+      if (group && !sequence) {
         message_sender_name = make("span");
         message_sender_name.classList.add("chat_message_sender_name");
         message_sender_name.innerText = data.sender;
+        message_sender_name.style.color = colors.get(data.sender);
       }
 
       message_body.append(
@@ -303,15 +352,33 @@ class Message {
         message_contentdate_wrapper
       );
 
-      message.append(message_arrow, message_body);
+      message.append(sequence ? "" : message_arrow, message_body);
+
     } else {
       message.dataset.mine = true;
 
       message_body.append(message_options, message_contentdate_wrapper);
 
-      message.append(message_body, message_arrow);
+      message.append(message_body, sequence ? "" : message_arrow);
     }
-
+    
     return message;
   }
+}
+
+/**
+ * Generate a random color in hexadecimal format
+ * @returns 
+ */
+function generateRandomColor() {
+  let color = "#";
+
+  while(color.length < 7){
+    let decimal = Math.round(Math.random() * 255);
+    if(decimal > 180 && decimal < 250){
+      color += decimal.toString(16);
+    }
+  }
+
+  return color;
 }
