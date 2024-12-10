@@ -2,11 +2,9 @@ import { ChatActions, make, Dropdown, formatDate } from "./utils.js";
 
 export default class PrincipalPanel {
   static createNochatPanel() {
-    const nochat_panel = make("div");
-    nochat_panel.id = "nochat_panel";
+    const nochat_panel = make("div", [], "nochat_panel");
 
-    const nochat_message = make("div");
-    nochat_message.id = "nochat_message";
+    const nochat_message = make("div", [], "nochat_message");
 
     nochat_message.innerHTML += `<svg
           viewBox="0 0 303 172"
@@ -112,8 +110,7 @@ export default class PrincipalPanel {
           ></path>
         </svg>`;
 
-    const nochat_title = make("h1");
-    nochat_title.innerText = "Whatsapp Web";
+    const nochat_title = make("h1", [], null, "Whatsapp Web");
 
     const nochat_text = make("p");
     nochat_text.innerHTML = `Envie e receba mensagens sem precisar manter seu celular conectado à
@@ -142,6 +139,7 @@ export default class PrincipalPanel {
 
     return nochat_panel;
   }
+
   /**
    *
    * @param {{id: number, name: string, members?:string[], pfp: string, lastSeen: string, date: string, group: boolean}} data
@@ -152,32 +150,31 @@ export default class PrincipalPanel {
     let members_colors = new Map();
 
     if (data.group) {
-      data.members.forEach((member) => members_colors.set(member, generateRandomColor()));
+      data.members.forEach((member) =>
+        members_colors.set(member, generateRandomColor())
+      );
     }
 
-    const chat_panel = make("div");
-    chat_panel.id = "chat_panel";
+    const chat_panel = make("div", [], "chat_panel");
     chat_panel.dataset.chatId = data.id;
 
-    const chat_header = make("header");
-    chat_header.id = "chat_header";
+    const chat_header = make("header", [], "chat_header");
 
     const wrapper = make("div");
 
-    const chat_pfp = make("img");
-    chat_pfp.id = "chat_pfp";
+    const chat_pfp = make("img", [], "chat_pfp");
     chat_pfp.src = data.pfp ?? "https://placehold.co/600";
 
     const text_container = make("hgroup");
 
-    const chat_name = make("span");
-    chat_name.id = "chat_name";
-    chat_name.innerText = data.name;
+    const chat_name = make("span", [], "chat_name", data.name);
 
-    const chat_info = make("span");
-    chat_info.id = "chat_info";
-
-    chat_info.innerText = "Clique para ver os dados do contato";
+    const chat_info = make(
+      "span",
+      [],
+      "chat_info",
+      "Clique para ver os dados do contato"
+    );
 
     if (!data.lastSeen && data.group) {
       setTimeout(() => {
@@ -201,8 +198,8 @@ export default class PrincipalPanel {
     wrapper.append(chat_pfp, text_container);
 
     chat_header.append(wrapper, chat_actions);
-    const chat_main = make("main");
-    chat_main.id = "chat_main";
+
+    const chat_main = make("main", [], "chat_main");
     chat_main.dataset.group = data.group;
 
     messages.forEach((message_data, ind, messages) => {
@@ -216,8 +213,7 @@ export default class PrincipalPanel {
       );
     });
 
-    const chat_message_bar = make("footer");
-    chat_message_bar.id = "chat_message_bar";
+    const chat_message_bar = make("footer", [], "chat_message_bar");
 
     const emoji_picker = make("button");
     emoji_picker.innerHTML = `<svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"><title>smiley</title><path fill="currentColor" d="M9.153,11.603c0.795,0,1.439-0.879,1.439-1.962S9.948,7.679,9.153,7.679 S7.714,8.558,7.714,9.641S8.358,11.603,9.153,11.603z M5.949,12.965c-0.026-0.307-0.131,5.218,6.063,5.551 c6.066-0.25,6.066-5.551,6.066-5.551C12,14.381,5.949,12.965,5.949,12.965z M17.312,14.073c0,0-0.669,1.959-5.051,1.959 c-3.505,0-5.388-1.164-5.607-1.959C6.654,14.073,12.566,15.128,17.312,14.073z M11.804,1.011c-6.195,0-10.826,5.022-10.826,11.217 s4.826,10.761,11.021,10.761S23.02,18.423,23.02,12.228C23.021,6.033,17.999,1.011,11.804,1.011z M12,21.354 c-5.273,0-9.381-3.886-9.381-9.159s3.942-9.548,9.215-9.548s9.548,4.275,9.548,9.548C21.381,17.467,17.273,21.354,12,21.354z  M15.108,11.603c0.795,0,1.439-0.879,1.439-1.962s-0.644-1.962-1.439-1.962s-1.439,0.879-1.439,1.962S14.313,11.603,15.108,11.603z"></path></svg>`;
@@ -228,14 +224,23 @@ export default class PrincipalPanel {
     const input_bar = make("input");
     input_bar.placeholder = "Digite uma mensagem";
 
-    window.addEventListener("keydown", (e)=>{
-      if(e.key == "Enter" && input_bar.value != ""){
-        chat_main.appendChild(Message.create({sender:"Me", content: input_bar.value, date: formatDate(new Date(), true) }, false, chat_main.lastChild.dataset.mine == "true"));
+    window.addEventListener("keydown", (e) => {
+      if (e.key == "Enter" && input_bar.value != "") {
+        chat_main.appendChild(
+          Message.create(
+            {
+              sender: "Me",
+              content: input_bar.value,
+              date: formatDate(new Date(), true),
+            },
+            false,
+            chat_main.lastChild.dataset.mine == "true"
+          )
+        );
         input_bar.value = "";
-        chat_main.scrollBy(0 , chat_main.scrollHeight);
+        chat_main.scrollBy(0, chat_main.scrollHeight);
       }
-      
-    })
+    });
 
     const audio_button = make("button");
     audio_button.innerHTML = `<svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"><title>ptt</title><path fill="currentColor" d="M11.999,14.942c2.001,0,3.531-1.53,3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531 S8.469,2.35,8.469,4.35v7.061C8.469,13.412,9.999,14.942,11.999,14.942z M18.237,11.412c0,3.531-2.942,6.002-6.237,6.002 s-6.237-2.471-6.237-6.002H3.761c0,4.001,3.178,7.297,7.061,7.885v3.884h2.354v-3.884c3.884-0.588,7.061-3.884,7.061-7.885 L18.237,11.412z"></path></svg>`;
@@ -248,8 +253,6 @@ export default class PrincipalPanel {
     );
 
     chat_panel.append(chat_header, chat_main, chat_message_bar);
-
-    
 
     return chat_panel;
   }
@@ -265,31 +268,26 @@ class Message {
    * @returns { HTMLDivElement }
    */
   static create(data, group = false, sequence = false, colors = new Map()) {
-    const message = make("div");
-    message.classList.add("chat_message");
+    const message = make("div", ["chat_message"]);
 
-    const message_arrow = make("span");
-    message_arrow.classList.add("chat_message_arrow");
+    const message_arrow = make("span", ["chat_message_arrow"]);
 
-    const message_body = make("div");
-
+    const message_body = make("div", ["chat_message_body"]);
 
     let message_sender_name;
 
-    message_body.classList.add("chat_message_body");
-
     const message_contentdate_wrapper = make("div");
 
-    const message_content = make("span");
-    message_content.classList.add("chat_message_content");
-    message_content.innerText = data.content;
+    const message_content = make(
+      "span",
+      ["chat_message_content"],
+      null,
+      data.content
+    );
 
-    const message_date = make("span");
-    message_date.classList.add("chat_message_date");
-    message_date.innerText = data.date;
+    const message_date = make("span", ["chat_message_date"], null, data.date);
 
-    const message_options = make("div");
-    message_options.classList.add("chat_message_options");
+    const message_options = make("div", ["chat_message_options"]);
 
     message_options.innerHTML = `<button><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
     fill="var(--gray-7)">
@@ -299,50 +297,49 @@ class Message {
     message_options.querySelector("button").addEventListener("click", (e) => {
       e.stopImmediatePropagation();
 
-      if (!document.querySelector(".dropdown")) {
-        const pos = {
-          x: e.target.getBoundingClientRect().x,
-          y: e.target.getBoundingClientRect().y,
-          marginX: "0",
-          marginY: "1.5",
-        };
+      const pos = {
+        x: e.target.getBoundingClientRect().x,
+        y: e.target.getBoundingClientRect().y,
+        marginX: "0",
+        marginY: "1.5",
+      };
 
-        document.body.appendChild(
-          Dropdown.create(
-            data.id,
-            data.sender != "Me"
-              ? [
-                  "Responder",
-                  "Reagir",
-                  "Encaminhar",
-                  "Fixar",
-                  "Favoritar",
-                  "Denunciar",
-                  "Apagar",
-                ]
-              : [
-                  "Dados da mensagem",
-                  "Responder",
-                  "Reagir",
-                  "Encaminhar",
-                  "Fixar",
-                  "Favoritar",
-                  "Apagar",
-                ],
-            pos,
-            false
-          )
-        );
-      }
+      Dropdown.create(
+        data.id,
+        data.sender != "Me"
+          ? [
+              "Responder",
+              "Reagir",
+              "Encaminhar",
+              "Fixar",
+              "Favoritar",
+              "Denunciar",
+              "Apagar",
+            ]
+          : [
+              "Dados da mensagem",
+              "Responder",
+              "Reagir",
+              "Encaminhar",
+              "Fixar",
+              "Favoritar",
+              "Apagar",
+            ],
+        pos,
+        false
+      );
     });
 
     message_contentdate_wrapper.append(message_content, message_date);
 
     if (data.sender != "Me") {
       if (group && !sequence) {
-        message_sender_name = make("span");
-        message_sender_name.classList.add("chat_message_sender_name");
-        message_sender_name.innerText = data.sender;
+        message_sender_name = make(
+          "span",
+          ["chat_message_sender_name"],
+          null,
+          data.sender
+        );
         message_sender_name.style.color = colors.get(data.sender);
       }
 
@@ -353,7 +350,6 @@ class Message {
       );
 
       message.append(sequence ? "" : message_arrow, message_body);
-
     } else {
       message.dataset.mine = true;
 
@@ -361,21 +357,21 @@ class Message {
 
       message.append(message_body, sequence ? "" : message_arrow);
     }
-    
+
     return message;
   }
 }
 
 /**
  * Generate a random color in hexadecimal format
- * @returns 
+ * @returns
  */
 function generateRandomColor() {
   let color = "#";
 
-  while(color.length < 7){
+  while (color.length < 7) {
     let decimal = Math.round(Math.random() * 255);
-    if(decimal > 180 && decimal < 250){
+    if (decimal > 180 && decimal < 250) {
       color += decimal.toString(16);
     }
   }
