@@ -1,409 +1,135 @@
 [
   [
     {
-      "id": 1,
+      "id": 0,
       "name": "João",
-      "lastMessage": "Olá, tudo bem?",
       "date": "03:15 PM",
       "lastSeen": "03:00 PM",
-      "chattype": "person"
+      "group": false
+    },
+    {
+      "id": 1,
+      "name": "Família Silva",
+      "date": "05:00 PM",
+      "members": ["João", "Carlos", "Lucas", "Marcela", "você"],
+      "group": true
     },
     {
       "id": 2,
-      "name": "Família Silva",
-      "lastMessage": "Reunião de família amanhã?",
-      "date": "05:00 PM",
-      "members": ["João", "Maria", "Ana", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 3,
       "name": "Carlos",
       "lastMessage": "Bom dia!",
       "date": "08:30 AM",
       "lastSeen": "08:15 AM",
-      "chattype": "person"
+      "group": false
     },
     {
-      "id": 4,
+      "id": 3,
       "name": "Amigos do Futebol",
       "lastMessage": "Jogo marcado para o sábado!",
       "date": "06:45 PM",
       "members": ["Carlos", "Lucas", "Pedro", "Gustavo", "você"],
-      "chattype": "group"
+      "group": true
     },
     {
-      "id": 5,
+      "id": 4,
       "name": "Ana",
       "lastMessage": "Você vem para a festa?",
       "date": "02:00 PM",
       "lastSeen": "01:45 PM",
-      "chattype": "person"
+      "group": false
     },
     {
-      "id": 6,
+      "id": 5,
       "name": "Trabalho",
       "lastMessage": "Reunião marcada para amanhã.",
       "date": "09:00 AM",
       "members": ["João", "Maria", "Paulo", "Clara", "você"],
-      "chattype": "group"
+      "group": true
     },
     {
-      "id": 7,
+      "id": 6,
       "name": "Pedro",
       "lastMessage": "Como vai?",
       "date": "10:30 AM",
       "lastSeen": "10:15 AM",
-      "chattype": "person"
+      "group": false
     },
     {
-      "id": 8,
+      "id": 7,
       "name": "Turma do Colégio",
       "lastMessage": "Vamos ao cinema?",
       "date": "07:30 PM",
       "members": ["Pedro", "João", "Lucas", "Mariana", "você"],
-      "chattype": "group"
+      "group": true
     },
     {
-      "id": 9,
+      "id": 8,
       "name": "Maria",
       "lastMessage": "Ok, te aviso depois.",
       "date": "01:00 PM",
       "lastSeen": "12:45 PM",
-      "chattype": "person"
+      "group": false
     },
     {
-      "id": 10,
+      "id": 9,
       "name": "Escola",
       "lastMessage": "Aula cancelada hoje.",
       "date": "08:00 AM",
       "members": ["Carlos", "Lucas", "João", "você"],
-      "chattype": "group"
+      "group": true
     },
     {
-      "id": 11,
+      "id": 10,
       "name": "Lucas",
       "lastMessage": "Tudo certo, vou.",
       "date": "02:45 PM",
       "lastSeen": "02:30 PM",
-      "chattype": "person"
+      "group": false
     },
     {
-      "id": 12,
+      "id": 11,
       "name": "Família Oliveira",
       "lastMessage": "Vamos almoçar juntos?",
       "date": "11:00 AM",
       "members": ["João", "Maria", "José", "você"],
-      "chattype": "group"
+      "group": true
     },
     {
-      "id": 13,
+      "id": 12,
       "name": "Carlos",
       "lastMessage": "Qual o plano para hoje?",
       "date": "05:30 PM",
       "lastSeen": "05:15 PM",
-      "chattype": "person"
+      "group": false
     },
     {
-      "id": 14,
+      "id": 13,
       "name": "Equipe de Futebol",
       "lastMessage": "Hora de treinar!",
       "date": "07:00 PM",
       "members": ["Carlos", "Lucas", "João", "Marcos", "você"],
-      "chattype": "group"
+      "group": true
     },
     {
-      "id": 15,
+      "id": 14,
       "name": "José",
       "lastMessage": "Boa noite!",
       "date": "09:15 PM",
       "lastSeen": "09:00 PM",
-      "chattype": "person"
+      "group": false
     },
     {
-      "id": 16,
+      "id": 15,
       "name": "Time de Vôlei",
       "lastMessage": "Treino no fim de semana.",
       "date": "04:00 PM",
       "members": ["José", "Carlos", "Lucas", "Marcela", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 17,
-      "name": "Amanda",
-      "lastMessage": "Eu vou!",
-      "date": "03:30 PM",
-      "lastSeen": "03:15 PM",
-      "chattype": "person"
-    },
-    {
-      "id": 18,
-      "name": "Turma do Ensino Médio",
-      "lastMessage": "Prova de matemática?",
-      "date": "06:00 PM",
-      "members": ["Amanda", "Lucas", "Ricardo", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 19,
-      "name": "Paulo",
-      "lastMessage": "Que horas vamos?",
-      "date": "12:15 PM",
-      "lastSeen": "12:00 PM",
-      "chattype": "person"
-    },
-    {
-      "id": 20,
-      "name": "Grupo de Estudo",
-      "lastMessage": "Revisão de física amanhã.",
-      "date": "03:45 PM",
-      "members": ["Paulo", "Lucas", "Mariana", "Ricardo", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 21,
-      "name": "Felipe",
-      "lastMessage": "Cheguei!",
-      "date": "04:30 PM",
-      "lastSeen": "04:15 PM",
-      "chattype": "person"
-    },
-    {
-      "id": 22,
-      "name": "Amigos da Praia",
-      "lastMessage": "Vai ter churrasco no fim de semana.",
-      "date": "07:45 PM",
-      "members": ["Felipe", "Bruna", "Gustavo", "Tiago", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 23,
-      "name": "Mariana",
-      "lastMessage": "Te vejo lá!",
-      "date": "05:30 PM",
-      "lastSeen": "05:15 PM",
-      "chattype": "person"
-    },
-    {
-      "id": 24,
-      "name": "Equipe de Marketing",
-      "lastMessage": "O relatório precisa ser entregue amanhã.",
-      "date": "10:15 AM",
-      "members": ["Mariana", "Tiago", "Felipe", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 25,
-      "name": "Roberta",
-      "lastMessage": "Estou indo para a reunião.",
-      "date": "09:00 AM",
-      "lastSeen": "08:45 AM",
-      "chattype": "person"
-    },
-    {
-      "id": 26,
-      "name": "Grupo de Voluntários",
-      "lastMessage": "Ação de limpeza no sábado.",
-      "date": "02:00 PM",
-      "members": ["Roberta", "Paula", "Marcelo", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 27,
-      "name": "Clara",
-      "lastMessage": "Que horas é o jantar?",
-      "date": "08:30 PM",
-      "lastSeen": "08:15 PM",
-      "chattype": "person"
-    },
-    {
-      "id": 28,
-      "name": "Turma de Arquitetura",
-      "lastMessage": "Projeto final está pronto.",
-      "date": "04:30 PM",
-      "members": ["Clara", "Giovana", "Renan", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 29,
-      "name": "Thiago",
-      "lastMessage": "Estou indo!",
-      "date": "06:15 PM",
-      "lastSeen": "06:00 PM",
-      "chattype": "person"
-    },
-    {
-      "id": 30,
-      "name": "Time de Basket",
-      "lastMessage": "Treino mais tarde.",
-      "date": "07:30 PM",
-      "members": ["Thiago", "Marcelo", "Lucas", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 31,
-      "name": "Roberta",
-      "lastMessage": "Como está o projeto?",
-      "date": "11:45 AM",
-      "lastSeen": "11:30 AM",
-      "chattype": "person"
-    },
-    {
-      "id": 32,
-      "name": "Grupo de Fotografia",
-      "lastMessage": "Vamos fazer a sessão no domingo.",
-      "date": "02:15 PM",
-      "members": ["Roberta", "José", "Lúcia", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 33,
-      "name": "Ricardo",
-      "lastMessage": "Certo, vou te esperar.",
-      "date": "09:45 AM",
-      "lastSeen": "09:30 AM",
-      "chattype": "person"
-    },
-    {
-      "id": 34,
-      "name": "Café da Manhã",
-      "lastMessage": "Vamos nos encontrar amanhã.",
-      "date": "07:00 AM",
-      "members": ["Ricardo", "Lívia", "Fernanda", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 35,
-      "name": "Lívia",
-      "lastMessage": "Acabei de acordar!",
-      "date": "08:00 AM",
-      "lastSeen": "07:45 AM",
-      "chattype": "person"
-    },
-    {
-      "id": 36,
-      "name": "Círculo de Leitura",
-      "lastMessage": "Vamos discutir o livro no fim de semana.",
-      "date": "03:00 PM",
-      "members": ["Lívia", "Júlia", "Marcelo", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 37,
-      "name": "Júlia",
-      "lastMessage": "Estou indo para a biblioteca.",
-      "date": "09:00 AM",
-      "lastSeen": "08:45 AM",
-      "chattype": "person"
-    },
-    {
-      "id": 38,
-      "name": "Grupo de Ciências",
-      "lastMessage": "Revisão sobre biologia amanhã.",
-      "date": "01:30 PM",
-      "members": ["Júlia", "Cláudia", "Pedro", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 39,
-      "name": "Gustavo",
-      "lastMessage": "Vou ao cinema depois.",
-      "date": "08:15 PM",
-      "lastSeen": "08:00 PM",
-      "chattype": "person"
-    },
-    {
-      "id": 40,
-      "name": "Relações Públicas",
-      "lastMessage": "Reunião importante amanhã.",
-      "date": "10:00 AM",
-      "members": ["Gustavo", "Fernando", "Sofia", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 41,
-      "name": "Fernanda",
-      "lastMessage": "Te encontro mais tarde.",
-      "date": "07:00 PM",
-      "lastSeen": "06:45 PM",
-      "chattype": "person"
-    },
-    {
-      "id": 42,
-      "name": "Comida e Bebida",
-      "lastMessage": "Festa amanhã?",
-      "date": "08:30 PM",
-      "members": ["Fernanda", "Camila", "Gustavo", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 43,
-      "name": "Eduardo",
-      "lastMessage": "Fui para o mercado.",
-      "date": "03:45 PM",
-      "lastSeen": "03:30 PM",
-      "chattype": "person"
-    },
-    {
-      "id": 44,
-      "name": "Grupo de Viagem",
-      "lastMessage": "Partimos na próxima sexta.",
-      "date": "09:15 AM",
-      "members": ["Eduardo", "Carlos", "Ricardo", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 45,
-      "name": "Sofia",
-      "lastMessage": "Estou esperando você.",
-      "date": "05:00 PM",
-      "lastSeen": "04:45 PM",
-      "chattype": "person"
-    },
-    {
-      "id": 46,
-      "name": "Banda de Rock",
-      "lastMessage": "Ensaios de terça.",
-      "date": "08:00 PM",
-      "members": ["Sofia", "Lucas", "Túlio", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 47,
-      "name": "Marcos",
-      "lastMessage": "Eu te ligo depois.",
-      "date": "02:15 PM",
-      "lastSeen": "02:00 PM",
-      "chattype": "person"
-    },
-    {
-      "id": 48,
-      "name": "Grupo de Investimentos",
-      "lastMessage": "Reunião para discutir novos projetos.",
-      "date": "11:45 AM",
-      "members": ["Marcos", "Lúcia", "Ricardo", "você"],
-      "chattype": "group"
-    },
-    {
-      "id": 49,
-      "name": "Lúcia",
-      "lastMessage": "Já terminei o relatório.",
-      "date": "04:30 PM",
-      "lastSeen": "04:15 PM",
-      "chattype": "person"
-    },
-    {
-      "id": 50,
-      "name": "Grupo de Tecnologia",
-      "lastMessage": "Vamos marcar uma reunião de equipe.",
-      "date": "10:30 AM",
-      "members": ["Lúcia", "Ricardo", "Gustavo", "você"],
-      "chattype": "group"
+      "group": true
     }
   ],
   [
     {
-      "id": 1,
+      "id": 0,
       "messages":[
         {
           "sender":"Me",
@@ -412,28 +138,178 @@
         },
         {
           "sender":"João",
-          "content":"Bom dia! Tudo bem?",
+          "content":"Bom dia!",
           "date":"08:15 AM"
         },
         {
           "sender":"João",
-          "content":"Preciso de você para algo",
+          "content":"Tudo bem com você?",
           "date":"08:16 AM"
+        },
+        {
+          "sender":"Me",
+          "content": "Sim e você?",
+          "date": "08:17 AM"
+        },
+        {
+          "sender":"Me",
+          "content": "Sua família está bem?",
+          "date": "08:17 AM"
         }
       ]
     },
     {
-      "id": 2,
+      "id": 1,
       "messages":[
         {
-          "sender":"Me",
-          "content": "Bom dia!",
-          "date": "08:00 AM"
+          "sender": "José",
+          "content": "Oi, pessoal! Como estão todos?",
+          "date": "10:00 AM"
         },
         {
-          "sender":"João",
-          "content":"Bom dia! Tudo bem?",
-          "date":"08:15 AM"
+          "sender": "Carlos",
+          "content": "Oi, José! Estamos bem. E você?",
+          "date": "10:05 AM"
+        },
+        {
+          "sender": "Me",
+          "content": "Estou bem também! Só pensando em como vai ser o Natal esse ano.",
+          "date": "10:10 AM"
+        },
+        {
+          "sender": "Me",
+          "content": "Acho que podemos fazer algo bem legal e diferente esse ano.",
+          "date": "10:12 AM"
+        },
+        {
+          "sender": "Marcela",
+          "content": "Eu estava pensando em fazer uma ceia diferente este ano. O que acham?",
+          "date": "10:15 AM"
+        },
+        {
+          "sender": "Lucas",
+          "content": "Uma ceia diferente? Que tipo de ideia você tem em mente?",
+          "date": "10:20 AM"
+        },
+        {
+          "sender": "Me",
+          "content": "Talvez algo mais leve, como pratos vegetarianos. O que acham?",
+          "date": "10:25 AM"
+        },
+        {
+          "sender": "Carlos",
+          "content": "Acho uma ótima ideia! Podemos fazer uma mistura entre pratos tradicionais e mais leves.",
+          "date": "10:30 AM"
+        },
+        {
+          "sender": "José",
+          "content": "Parece bom! Vamos discutir mais depois, mas vamos fazer algo especial para esse Natal.",
+          "date": "10:35 AM"
+        },
+        {
+          "sender": "Marcela",
+          "content": "Quem vai trazer as sobremesas? Estou pensando em fazer pavê e uma mousse de maracujá.",
+          "date": "10:40 AM"
+        },
+        {
+          "sender": "Me",
+          "content": "Eu posso trazer os aperitivos! Vou fazer uma seleção de petiscos para acompanhar.",
+          "date": "10:45 AM"
+        },
+        {
+          "sender": "Lucas",
+          "content": "Eu posso trazer o pavê, Marcela! Mousse de maracujá também fica ótimo.",
+          "date": "10:50 AM"
+        },
+        {
+          "sender": "Carlos",
+          "content": "Eu fico responsável pelas bebidas! Vou ver o que a gente pode fazer para agradar a todos.",
+          "date": "10:55 AM"
+        },
+        {
+          "sender": "José",
+          "content": "Eu vou cuidar das entradas então. Vou pensar em algo bem leve e saboroso.",
+          "date": "11:00 AM"
+        },
+        {
+          "sender": "Me",
+          "content": "Eu também posso ajudar com as entradas, José. Podemos fazer algo bem criativo!",
+          "date": "11:05 AM"
+        },
+        {
+          "sender": "Marcela",
+          "content": "Perfeito, José! Vai ser um Natal bem gostoso. 😊",
+          "date": "11:10 AM"
+        },
+        {
+          "sender": "Lucas",
+          "content": "Estou ansioso! Vai ser um ótimo encontro!",
+          "date": "11:15 AM"
+        },
+        {
+          "sender": "Me",
+          "content": "Eu também estou muito ansioso! Vai ser incrível!",
+          "date": "11:20 AM"
+        },
+        {
+          "sender": "Carlos",
+          "content": "Com certeza! Vamos fazer desse Natal um momento inesquecível.",
+          "date": "11:25 AM"
+        },
+        {
+          "sender": "José",
+          "content": "Combinado, pessoal! Vamos arrasar na ceia! 🎄🍴",
+          "date": "11:30 AM"
+        },
+        {
+          "sender": "Me",
+          "content": "Que tal fazermos algo de surpresa também? Como uma troca de presentes secreta?",
+          "date": "11:35 AM"
+        },
+        {
+          "sender": "Marcela",
+          "content": "Adorei a ideia! Vamos fazer isso. 🎁",
+          "date": "11:40 AM"
+        },
+        {
+          "sender": "Lucas",
+          "content": "Eu adoro a troca de presentes! Vai ser divertido!",
+          "date": "11:45 AM"
+        },
+        {
+          "sender": "Lucas",
+          "content": "Acho que vai ser o melhor Natal de todos! 😄",
+          "date": "11:50 AM"
+        },
+        {
+          "sender": "Me",
+          "content": "Eu concordo! Vai ser inesquecível. 😍",
+          "date": "11:55 AM"
+        },
+        {
+          "sender": "José",
+          "content": "Pessoal, vamos fazer algo especial para a decoração também? Podemos deixar o ambiente bem acolhedor.",
+          "date": "12:00 PM"
+        },
+        {
+          "sender": "Marcela",
+          "content": "Claro! Podemos usar luzes, velas e talvez até um tema específico!",
+          "date": "12:05 PM"
+        },
+        {
+          "sender": "Marcela",
+          "content": "Acho que uma decoração simples e elegante vai ser perfeita!",
+          "date": "12:10 PM"
+        },
+        {
+          "sender": "Me",
+          "content": "Eu posso ajudar com isso também! Vamos pensar em algo bem bonito.",
+          "date": "12:15 PM"
+        },
+        {
+          "sender": "Carlos",
+          "content": "Isso está ficando incrível! O Natal será realmente inesquecível.",
+          "date": "12:20 PM"
         }
       ]
     }
