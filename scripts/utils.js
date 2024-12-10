@@ -9,67 +9,77 @@ export class Dropdown {
    * @returns
    */
   static create(id, options, anchorPos, overflows) {
-    const menu = document.createElement("menu");
-    menu.classList = "dropdown";
-    menu.dataset.id = id;
+    if (!document.body.querySelector(".dropdown")) {
+      const menu = make("menu", ["dropdown"]);
+      menu.dataset.callerId = id;
 
-    for (const option of options) {
-      const li = document.createElement("li");
-      li.classList = "popover_option";
+      for (const option of options) {
+        const li = make("li", ["popover_option"]);
 
-      const button = document.createElement("button");
-      button.innerText = option;
+        const button = make("button", [], "", option);
 
-      li.appendChild(button);
-      menu.appendChild(li);
+        li.appendChild(button);
+        menu.appendChild(li);
+      }
+
+      menu.style.position = "absolute";
+
+      let origin = "";
+
+      const posLimits = {
+        true: { min: 0.375, max: 0.625 },
+        false: { min: 0.5, max: 0.5 },
+      };
+
+      if (window.innerHeight * posLimits[overflows].max <= anchorPos.y) {
+        menu.style.bottom = `calc(${window.innerHeight - anchorPos.y}px)`;
+        origin = "bottom";
+      } else if (window.innerHeight * posLimits[overflows].min > anchorPos.y) {
+        menu.style.top = `calc(${anchorPos.marginY}rem + ${anchorPos.y}px)`;
+        origin = "top";
+      } else {
+        menu.style.top = window.innerHeight * 0.25 + "px";
+        origin = "top";
+      }
+
+      if (window.innerWidth * 0.75 < anchorPos.x) {
+        menu.style.right = `calc(${anchorPos.marginX}rem + ${
+          window.innerWidth - anchorPos.x
+        }px)`;
+        origin += " right";
+      } else {
+        menu.style.left = `calc(${anchorPos.marginX}rem + ${anchorPos.x}px)`;
+        origin += " left";
+      }
+
+      menu.style.transformOrigin = origin;
+
+      menu.style.animation = "expand 0.33s ease";
+
+      document.body.addEventListener(
+        "mousedown",
+        () => {
+          menu.animate([{ transform: "scale(0)", opacity: 0 }], {
+            duration: 340,
+            easing: "ease",
+          });
+
+          setTimeout(() => {
+            menu.remove();
+          }, 330);
+        },
+        { once: true }
+      );
+      document.body.appendChild(menu);
     }
-    
-    menu.style.position = "absolute";
-
-    let origin = "";
-    
-    const posLimits = {
-      true: {min: 0.375, max: 0.625},
-      false: {min: 0.5, max: 0.5}
-    }
-
-    if (window.innerHeight * posLimits[overflows].max <= anchorPos.y)  {
-      menu.style.bottom = `calc(${window.innerHeight - anchorPos.y}px)`;
-      origin = "bottom";
-
-    } else  if (window.innerHeight * posLimits[overflows].min > anchorPos.y){
-      menu.style.top = `calc(${anchorPos.marginY}rem + ${anchorPos.y}px)`;
-      origin = "top";
-    } else {
-      menu.style.top = window.innerHeight * 0.25 + "px";
-      origin = "top";
-    }
-
-    if(window.innerWidth * 0.75 < anchorPos.x){
-      menu.style.right = `calc(${anchorPos.marginX}rem + ${window.innerWidth - anchorPos.x}px)`;
-      origin += " right";
-    } else {
-      menu.style.left = `calc(${anchorPos.marginX}rem + ${anchorPos.x}px)`;
-      origin += " left";
-    }
-
-    menu.style.transformOrigin = origin;
-
-    menu.style.animation = "expand 0.33s ease";
-
-    
-
-    return menu;
   }
 }
 
 export class ChatActions {
-  static create(chatId){
-    const chat_actions = document.createElement("div");
-    chat_actions.classList = "chat_actions";
+  static create(chatId) {
+    const chat_actions = make("div", ["chat_actions"]);
 
-    const search_action = document.createElement("button");
-    search_action.classList.add("search_action");
+    const search_action = make("button", ["search_action"]);
     search_action.innerHTML = `<svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -82,8 +92,7 @@ export class ChatActions {
               />
             </svg>`;
 
-    const options_action = document.createElement("button");
-    options_action.classList.add("options_action");
+    const options_action = make("button", ["options_action"]);
     options_action.innerHTML = `<svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20px"
@@ -101,36 +110,54 @@ export class ChatActions {
                   <circle cx="12" cy="19" r="1" />
                 </svg>`;
 
-    chat_actions.append(search_action, options_action)
+    chat_actions.append(search_action, options_action);
 
     return chat_actions;
   }
 }
 
 /**
- * Abstraction of document.createElement
- * @param { HTMLElement } element 
- * @returns 
+ * Abstraction of element creating
+ * @param {string} tag
+ * @param {string[]} classList
+ * @param {string} id
+ * @param {string} innerText
+ * @returns
  */
-export function make(element){
-  return document.createElement(element);
+export function make(tag, classList = [], id = null, innerText = null) {
+  let element = document.createElement(tag);
+
+  element.classList.add(...classList);
+
+  if (id) {
+    element.id = id;
+  }
+
+  element.innerText = innerText;
+
+  return element;
 }
+
 /**
  * Takes a date object and return the formated date
  * @param {Date} date The Date object from the moment that the function is called
  * @param {boolean} AMPM If true the return will be in AM PM format
- * @returns 
+ * @returns
  */
-export function formatDate(date, AMPM=false){
+export function formatDate(date, AMPM = false) {
   let formatedDate;
   let hours = date.getHours();
   let minutes = date.getMinutes();
 
-  if(AMPM){
-    formatedDate = `${(hours - 12).toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")} ${hours > 11? "PM" : "AM"}`
+  if (AMPM) {
+    formatedDate = `${(hours - 12).toString().padStart(2, "0")}:${minutes
+      .toString()
+      .padStart(2, "0")} ${hours > 11 ? "PM" : "AM"}`;
   } else {
-    formatedDate = `${hours.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}`;
+    formatedDate = `${hours.toString().padStart(2, "0")}:${minutes
+      .toString()
+      .padStart(2, "0")}`;
   }
-  
+
   return formatedDate;
 }
