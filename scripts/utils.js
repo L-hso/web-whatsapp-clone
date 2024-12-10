@@ -150,7 +150,7 @@ export function formatDate(date, AMPM = false) {
   let minutes = date.getMinutes();
 
   if (AMPM) {
-    formatedDate = `${(hours - 12).toString().padStart(2, "0")}:${minutes
+    formatedDate = `${(hours > 12 ?  hours - 12 : hours).toString().padStart(2, "0")}:${minutes
       .toString()
       .padStart(2, "0")} ${hours > 11 ? "PM" : "AM"}`;
   } else {
