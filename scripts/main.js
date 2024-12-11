@@ -5,7 +5,7 @@ import PrincipalPanel from "./principal_panel.js";
 /*---------------------- CHATS AREA ----------------------*/
 const messagesMain = document.querySelector("#messages main ul");
 
-const chatsData = await fetch("../fakedata.json").then((response) =>
+const chatsData = await fetch("./../example.json").then((response) =>
   response.json()
 );
 
