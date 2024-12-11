@@ -238,7 +238,7 @@ export default class PrincipalPanel {
     window.addEventListener("keydown", (e) => {
       let input_value = input_bar.value.trim();
 
-      let valid_characters = /^[\w!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/? áàéèíìóòúùýỳÁÀÉÈÍÌÓÒÚÙÝỲ]+$/;
+      let valid_characters = /[\w!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?áàéèíìóòúùýỳÁÀÉÈÍÌÓÒÚÙÝỲ]+/g;
       
       if (e.key == "Enter" && !e.shiftKey && input_value.match(valid_characters)) {
         chat_main.appendChild(
