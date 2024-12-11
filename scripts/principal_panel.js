@@ -221,11 +221,26 @@ export default class PrincipalPanel {
     const media_picker = make("button");
     media_picker.innerHTML = `<svg viewBox="0 0 24 24" width="30" preserveAspectRatio="xMidYMid meet"><title>plus</title><path fill="currentColor" d="M19,13h-6v6h-2v-6H5v-2h6V5h2v6h6V13z"></path></svg>`;
 
-    const input_bar = make("input");
+    const input_bar_wrapper = make("div", [], "input_bar_wrapper");
+    const input_bar = make("textarea", [], "input_bar");
+
+    input_bar.maxLength = 200;
     input_bar.placeholder = "Digite uma mensagem";
+    input_bar.rows = 1;
+
+    input_bar.addEventListener("input", (e) => {
+      e.target.style.height = "auto";
+      e.target.style.height = e.target.scrollHeight + "px";
+    });
+
+    input_bar_wrapper.appendChild(input_bar);
 
     window.addEventListener("keydown", (e) => {
-      if (e.key == "Enter" && input_bar.value != "") {
+      let input_value = input_bar.value.trim();
+
+      let valid_characters = /^[\w!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/? áàéèíìóòúùýỳÁÀÉÈÍÌÓÒÚÙÝỲ]+$/;
+      
+      if (e.key == "Enter" && !e.shiftKey && input_value.match(valid_characters)) {
         chat_main.appendChild(
           Message.create(
             {
@@ -237,9 +252,18 @@ export default class PrincipalPanel {
             chat_main.lastChild.dataset.mine == "true"
           )
         );
+
         input_bar.value = "";
+        input_bar.style.height = "auto";
+        input_bar.style.height = input_bar.scrollHeight + "px";
+
         chat_main.scrollBy(0, chat_main.scrollHeight);
       }
+
+      if (e.key == "Enter" && !e.shiftKey) {
+        e.preventDefault();
+      }
+
     });
 
     const audio_button = make("button");
@@ -248,7 +272,7 @@ export default class PrincipalPanel {
     chat_message_bar.append(
       emoji_picker,
       media_picker,
-      input_bar,
+      input_bar_wrapper,
       audio_button
     );
 
