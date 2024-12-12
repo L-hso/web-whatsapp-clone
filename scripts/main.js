@@ -38,7 +38,7 @@ await chatsData[0].forEach((data) => {
 
             let options;
 
-            if (data.group) {
+            if (data.isGroup) {
               options = [
                 "Dados do grupo",
                 "Selecionar mensagens",

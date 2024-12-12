@@ -142,14 +142,14 @@ export default class PrincipalPanel {
 
   /**
    *
-   * @param {{chatId: number, name: string, members?:string[], pfp: string, lastSeen: string, date: string, group: boolean}} data
+   * @param {{chatId: number, name: string, members?:string[], pfp: string, lastSeen: string, date: string, isGroup: boolean}} data
    * @param {{sender: string, content: string, date: string}[]} messages
    * @returns { HTMLDivElement }
    */
   static createChatPanel(data, messages) {
     let members_colors = new Map();
 
-    if (data.group) {
+    if (data.isGroup) {
       data.members.forEach((member) =>
         members_colors.set(member, generateRandomColor())
       );
@@ -176,7 +176,7 @@ export default class PrincipalPanel {
       "Clique para ver os dados do contato"
     );
 
-    if (!data.lastSeen && data.group) {
+    if (!data.lastSeen && data.isGroup) {
       setTimeout(() => {
         chat_info.remove();
       }, 3000);
@@ -184,7 +184,7 @@ export default class PrincipalPanel {
       setInterval(() => {
         chat_info.innerText =
           chat_info.innerText == "Clique para ver os dados do contato"
-            ? data.group
+            ? data.isGroup
               ? data.members.join(", ")
               : `Visto por último hoje às ${data.lastSeen}`
             : "Clique para ver os dados do contato";
@@ -200,13 +200,13 @@ export default class PrincipalPanel {
     chat_header.append(wrapper, chat_actions);
 
     const chat_main = make("main", [], "chat_main");
-    chat_main.dataset.group = data.group;
+    chat_main.dataset.isGroup = data.isGroup;
 
     messages.forEach((message_data, ind, messages) => {
       chat_main.appendChild(
         Message.create(
           message_data,
-          data.group == true,
+          data.isGroup,
           ind > 0 && messages[ind - 1].sender == message_data.sender,
           members_colors
         )
@@ -290,12 +290,12 @@ class Message {
   /**
    *
    * @param {{messageId: number, sender: string, content: string, date: string}} data
-   * @param {boolean} group
+   * @param {boolean} isGroup
    * @param {boolean} sequence
    * @param {Map<string, string>} colors
    * @returns { HTMLDivElement }
    */
-  static create(data, group = false, sequence = false, colors = new Map()) {
+  static create(data, isGroup = false, sequence = false, colors = new Map()) {
     const message = make("div", ["chat_message"]);
 
     const message_arrow = make("span", ["chat_message_arrow"]);
@@ -361,7 +361,7 @@ class Message {
     message_contentdate_wrapper.append(message_content, message_date);
 
     if (data.sender != "Me") {
-      if (group && !sequence) {
+      if (isGroup && !sequence) {
         message_sender_name = make(
           "span",
           ["chat_message_sender_name"],

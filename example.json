@@ -5,14 +5,14 @@
       "name": "João",
       "date": "03:15 PM",
       "lastSeen": "03:00 PM",
-      "group": false
+      "isGroup": false
     },
     {
       "chatId": 1,
       "name": "Família Silva",
       "date": "05:00 PM",
       "members": ["João", "Carlos", "Lucas", "Marcela", "você"],
-      "group": true
+      "isGroup": true
     },
     {
       "chatId": 2,
@@ -20,7 +20,7 @@
       "lastMessage": "Bom dia!",
       "date": "08:30 AM",
       "lastSeen": "08:15 AM",
-      "group": false
+      "isGroup": false
     },
     {
       "chatId": 3,
@@ -28,7 +28,7 @@
       "lastMessage": "Jogo marcado para o sábado!",
       "date": "06:45 PM",
       "members": ["Carlos", "Lucas", "Pedro", "Gustavo", "você"],
-      "group": true
+      "isGroup": true
     },
     {
       "chatId": 4,
@@ -36,7 +36,7 @@
       "lastMessage": "Você vem para a festa?",
       "date": "02:00 PM",
       "lastSeen": "01:45 PM",
-      "group": false
+      "isGroup": false
     },
     {
       "chatId": 5,
@@ -44,7 +44,7 @@
       "lastMessage": "Reunião marcada para amanhã.",
       "date": "09:00 AM",
       "members": ["João", "Maria", "Paulo", "Clara", "você"],
-      "group": true
+      "isGroup": true
     },
     {
       "chatId": 6,
@@ -52,7 +52,7 @@
       "lastMessage": "Como vai?",
       "date": "10:30 AM",
       "lastSeen": "10:15 AM",
-      "group": false
+      "isGroup": false
     },
     {
       "chatId": 7,
@@ -60,7 +60,7 @@
       "lastMessage": "Vamos ao cinema?",
       "date": "07:30 PM",
       "members": ["Pedro", "João", "Lucas", "Mariana", "você"],
-      "group": true
+      "isGroup": true
     },
     {
       "chatId": 8,
@@ -68,7 +68,7 @@
       "lastMessage": "Ok, te aviso depois.",
       "date": "01:00 PM",
       "lastSeen": "12:45 PM",
-      "group": false
+      "isGroup": false
     },
     {
       "chatId": 9,
@@ -76,7 +76,7 @@
       "lastMessage": "Aula cancelada hoje.",
       "date": "08:00 AM",
       "members": ["Carlos", "Lucas", "João", "você"],
-      "group": true
+      "isGroup": true
     },
     {
       "chatId": 10,
@@ -84,7 +84,7 @@
       "lastMessage": "Tudo certo, vou.",
       "date": "02:45 PM",
       "lastSeen": "02:30 PM",
-      "group": false
+      "isGroup": false
     },
     {
       "chatId": 11,
@@ -92,7 +92,7 @@
       "lastMessage": "Vamos almoçar juntos?",
       "date": "11:00 AM",
       "members": ["João", "Maria", "José", "você"],
-      "group": true
+      "isGroup": true
     },
     {
       "chatId": 12,
@@ -100,7 +100,7 @@
       "lastMessage": "Qual o plano para hoje?",
       "date": "05:30 PM",
       "lastSeen": "05:15 PM",
-      "group": false
+      "isGroup": false
     },
     {
       "chatId": 13,
@@ -108,7 +108,7 @@
       "lastMessage": "Hora de treinar!",
       "date": "07:00 PM",
       "members": ["Carlos", "Lucas", "João", "Marcos", "você"],
-      "group": true
+      "isGroup": true
     },
     {
       "chatId": 14,
@@ -116,7 +116,7 @@
       "lastMessage": "Boa noite!",
       "date": "09:15 PM",
       "lastSeen": "09:00 PM",
-      "group": false
+      "isGroup": false
     },
     {
       "chatId": 15,
@@ -124,7 +124,7 @@
       "lastMessage": "Treino no fim de semana.",
       "date": "04:00 PM",
       "members": ["José", "Carlos", "Lucas", "Marcela", "você"],
-      "group": true
+      "isGroup": true
     }
   ],
   [

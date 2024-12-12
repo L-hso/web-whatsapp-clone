@@ -45,7 +45,7 @@ export default class Chat {
                 </svg>`;
 
     chatOptions.addEventListener("click", (e) => {
-      chatsCreateContextMenu(data.chatId, e, {
+      chatsCreateContextMenu(data.chatId, data.isGroup,e, {
         x: e.currentTarget.getBoundingClientRect().x,
         y: e.currentTarget.getBoundingClientRect().y,
         marginX: "1.5",
