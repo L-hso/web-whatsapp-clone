@@ -65,7 +65,7 @@ await chatsData[0].forEach((data) => {
             }
 
             Dropdown.create(
-              -1,
+              data.chatId,
               options,
               {
                 x: e.clientX,
