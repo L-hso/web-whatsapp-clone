@@ -11,6 +11,7 @@ const chatsData = await fetch("./example.json").then((response) =>
 
 await chatsData[0].forEach((data) => {
   let chat = Chat.create(data);
+
   chat.addEventListener("click", (e) => {
     if (
       e.currentTarget.dataset.chatId !=
@@ -22,12 +23,12 @@ await chatsData[0].forEach((data) => {
 
       document.querySelector("#principal_panel").firstChild.remove();
 
-      if (chatsData[1][data.id]?.messages) {
+      if (chatsData[1][data.chatId]?.messages) {
         e.currentTarget.dataset.active = true;
 
         let panel = PrincipalPanel.createChatPanel(
-          chatsData[0][data.id],
-          chatsData[1][data.id].messages
+          chatsData[0][data.chatId],
+          chatsData[1][data.chatId].messages
         );
 
         panel

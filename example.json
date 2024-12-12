@@ -1,21 +1,21 @@
 [
   [
     {
-      "id": 0,
+      "chatId": 0,
       "name": "João",
       "date": "03:15 PM",
       "lastSeen": "03:00 PM",
       "group": false
     },
     {
-      "id": 1,
+      "chatId": 1,
       "name": "Família Silva",
       "date": "05:00 PM",
       "members": ["João", "Carlos", "Lucas", "Marcela", "você"],
       "group": true
     },
     {
-      "id": 2,
+      "chatId": 2,
       "name": "Carlos",
       "lastMessage": "Bom dia!",
       "date": "08:30 AM",
@@ -23,7 +23,7 @@
       "group": false
     },
     {
-      "id": 3,
+      "chatId": 3,
       "name": "Amigos do Futebol",
       "lastMessage": "Jogo marcado para o sábado!",
       "date": "06:45 PM",
@@ -31,7 +31,7 @@
       "group": true
     },
     {
-      "id": 4,
+      "chatId": 4,
       "name": "Ana",
       "lastMessage": "Você vem para a festa?",
       "date": "02:00 PM",
@@ -39,7 +39,7 @@
       "group": false
     },
     {
-      "id": 5,
+      "chatId": 5,
       "name": "Trabalho",
       "lastMessage": "Reunião marcada para amanhã.",
       "date": "09:00 AM",
@@ -47,7 +47,7 @@
       "group": true
     },
     {
-      "id": 6,
+      "chatId": 6,
       "name": "Pedro",
       "lastMessage": "Como vai?",
       "date": "10:30 AM",
@@ -55,7 +55,7 @@
       "group": false
     },
     {
-      "id": 7,
+      "chatId": 7,
       "name": "Turma do Colégio",
       "lastMessage": "Vamos ao cinema?",
       "date": "07:30 PM",
@@ -63,7 +63,7 @@
       "group": true
     },
     {
-      "id": 8,
+      "chatId": 8,
       "name": "Maria",
       "lastMessage": "Ok, te aviso depois.",
       "date": "01:00 PM",
@@ -71,7 +71,7 @@
       "group": false
     },
     {
-      "id": 9,
+      "chatId": 9,
       "name": "Escola",
       "lastMessage": "Aula cancelada hoje.",
       "date": "08:00 AM",
@@ -79,7 +79,7 @@
       "group": true
     },
     {
-      "id": 10,
+      "chatId": 10,
       "name": "Lucas",
       "lastMessage": "Tudo certo, vou.",
       "date": "02:45 PM",
@@ -87,7 +87,7 @@
       "group": false
     },
     {
-      "id": 11,
+      "chatId": 11,
       "name": "Família Oliveira",
       "lastMessage": "Vamos almoçar juntos?",
       "date": "11:00 AM",
@@ -95,7 +95,7 @@
       "group": true
     },
     {
-      "id": 12,
+      "chatId": 12,
       "name": "Carlos",
       "lastMessage": "Qual o plano para hoje?",
       "date": "05:30 PM",
@@ -103,7 +103,7 @@
       "group": false
     },
     {
-      "id": 13,
+      "chatId": 13,
       "name": "Equipe de Futebol",
       "lastMessage": "Hora de treinar!",
       "date": "07:00 PM",
@@ -111,7 +111,7 @@
       "group": true
     },
     {
-      "id": 14,
+      "chatId": 14,
       "name": "José",
       "lastMessage": "Boa noite!",
       "date": "09:15 PM",
@@ -119,7 +119,7 @@
       "group": false
     },
     {
-      "id": 15,
+      "chatId": 15,
       "name": "Time de Vôlei",
       "lastMessage": "Treino no fim de semana.",
       "date": "04:00 PM",
@@ -129,29 +129,34 @@
   ],
   [
     {
-      "id": 0,
+      "chatId": 0,
       "messages":[
         {
+          "messageId": 0,
           "sender":"Me",
           "content": "Bom dia!",
           "date": "08:00 AM"
         },
         {
+          "messageId": 1,
           "sender":"João",
           "content":"Bom dia!",
           "date":"08:15 AM"
         },
         {
+          "messageId": 2,
           "sender":"João",
           "content":"Tudo bem com você?",
           "date":"08:16 AM"
         },
         {
+          "messageId": 3,
           "sender":"Me",
           "content": "Sim e você?",
           "date": "08:17 AM"
         },
         {
+          "messageId": 4,
           "sender":"Me",
           "content": "Sua família está bem?",
           "date": "08:17 AM"
@@ -159,154 +164,184 @@
       ]
     },
     {
-      "id": 1,
+      "chatId": 1,
       "messages":[
         {
+          "messageId": 0,
           "sender": "José",
           "content": "Oi, pessoal! Como estão todos?",
           "date": "10:00 AM"
         },
         {
+          "messageId": 1,
           "sender": "Carlos",
           "content": "Oi, José! Estamos bem. E você?",
           "date": "10:05 AM"
         },
         {
+          "messageId": 2,
           "sender": "Me",
           "content": "Estou bem também! Só pensando em como vai ser o Natal esse ano.",
           "date": "10:10 AM"
         },
         {
+          "messageId": 3,
           "sender": "Me",
           "content": "Acho que podemos fazer algo bem legal e diferente esse ano.",
           "date": "10:12 AM"
         },
         {
+          "messageId": 4,
           "sender": "Marcela",
           "content": "Eu estava pensando em fazer uma ceia diferente este ano. O que acham?",
           "date": "10:15 AM"
         },
         {
+          "messageId": 5,
           "sender": "Lucas",
-          "content": "Uma ceia diferente? Que tipo de ideia você tem em mente?",
+          "content": "Uma ceia diferente? Que tipo de chatIdeia você tem em mente?",
           "date": "10:20 AM"
         },
-        {
+        { 
+          "messageId": 6,
           "sender": "Me",
           "content": "Talvez algo mais leve, como pratos vegetarianos. O que acham?",
           "date": "10:25 AM"
         },
         {
+          "messageId": 7,
           "sender": "Carlos",
-          "content": "Acho uma ótima ideia! Podemos fazer uma mistura entre pratos tradicionais e mais leves.",
+          "content": "Acho uma ótima chatIdeia! Podemos fazer uma mistura entre pratos tradicionais e mais leves.",
           "date": "10:30 AM"
         },
         {
+          "messageId": 8,
           "sender": "José",
           "content": "Parece bom! Vamos discutir mais depois, mas vamos fazer algo especial para esse Natal.",
           "date": "10:35 AM"
         },
         {
+          "messageId": 9,
           "sender": "Marcela",
           "content": "Quem vai trazer as sobremesas? Estou pensando em fazer pavê e uma mousse de maracujá.",
           "date": "10:40 AM"
         },
         {
+          "messageId": 10,
           "sender": "Me",
           "content": "Eu posso trazer os aperitivos! Vou fazer uma seleção de petiscos para acompanhar.",
           "date": "10:45 AM"
         },
         {
+          "messageId": 11,
           "sender": "Lucas",
           "content": "Eu posso trazer o pavê, Marcela! Mousse de maracujá também fica ótimo.",
           "date": "10:50 AM"
         },
         {
+          "messageId": 12,
           "sender": "Carlos",
-          "content": "Eu fico responsável pelas bebidas! Vou ver o que a gente pode fazer para agradar a todos.",
+          "content": "Eu fico responsável pelas bebchatIdas! Vou ver o que a gente pode fazer para agradar a todos.",
           "date": "10:55 AM"
         },
         {
+          "messageId": 13,
           "sender": "José",
-          "content": "Eu vou cuidar das entradas então. Vou pensar em algo bem leve e saboroso.",
+          "content": "Eu vou cuchatIdar das entradas então. Vou pensar em algo bem leve e saboroso.",
           "date": "11:00 AM"
         },
         {
+          "messageId": 14,
           "sender": "Me",
           "content": "Eu também posso ajudar com as entradas, José. Podemos fazer algo bem criativo!",
           "date": "11:05 AM"
         },
         {
+          "messageId": 15,
           "sender": "Marcela",
           "content": "Perfeito, José! Vai ser um Natal bem gostoso. 😊",
           "date": "11:10 AM"
         },
         {
+          "messageId": 16,
           "sender": "Lucas",
           "content": "Estou ansioso! Vai ser um ótimo encontro!",
           "date": "11:15 AM"
         },
         {
+          "messageId": 17,
           "sender": "Me",
           "content": "Eu também estou muito ansioso! Vai ser incrível!",
           "date": "11:20 AM"
         },
         {
+          "messageId": 18,
           "sender": "Carlos",
           "content": "Com certeza! Vamos fazer desse Natal um momento inesquecível.",
           "date": "11:25 AM"
         },
         {
+          "messageId": 19,
           "sender": "José",
           "content": "Combinado, pessoal! Vamos arrasar na ceia! 🎄🍴",
           "date": "11:30 AM"
         },
         {
+          "messageId": 20,
           "sender": "Me",
           "content": "Que tal fazermos algo de surpresa também? Como uma troca de presentes secreta?",
           "date": "11:35 AM"
         },
         {
+          "messageId": 21,
           "sender": "Marcela",
-          "content": "Adorei a ideia! Vamos fazer isso. 🎁",
+          "content": "Adorei a chatIdeia! Vamos fazer isso. 🎁",
           "date": "11:40 AM"
         },
         {
+          "messageId": 22,
           "sender": "Lucas",
-          "content": "Eu adoro a troca de presentes! Vai ser divertido!",
+          "content": "Eu adoro a troca de presentes! Vai ser divertchatIdo!",
           "date": "11:45 AM"
         },
         {
+          "messageId": 23,
           "sender": "Lucas",
           "content": "Acho que vai ser o melhor Natal de todos! 😄",
           "date": "11:50 AM"
         },
         {
+          "messageId": 24,
           "sender": "Me",
           "content": "Eu concordo! Vai ser inesquecível. 😍",
           "date": "11:55 AM"
         },
         {
+          "messageId": 25,
           "sender": "José",
           "content": "Pessoal, vamos fazer algo especial para a decoração também? Podemos deixar o ambiente bem acolhedor.",
           "date": "12:00 PM"
         },
         {
+          "messageId": 26,
           "sender": "Marcela",
           "content": "Claro! Podemos usar luzes, velas e talvez até um tema específico!",
           "date": "12:05 PM"
         },
         {
+          "messageId": 27,
           "sender": "Marcela",
           "content": "Acho que uma decoração simples e elegante vai ser perfeita!",
           "date": "12:10 PM"
         },
         {
+          "messageId": 28,
           "sender": "Me",
           "content": "Eu posso ajudar com isso também! Vamos pensar em algo bem bonito.",
           "date": "12:15 PM"
         },
         {
+          "messageId": 29,
           "sender": "Carlos",
           "content": "Isso está ficando incrível! O Natal será realmente inesquecível.",
           "date": "12:20 PM"

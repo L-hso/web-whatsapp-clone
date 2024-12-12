@@ -142,7 +142,7 @@ export default class PrincipalPanel {
 
   /**
    *
-   * @param {{id: number, name: string, members?:string[], pfp: string, lastSeen: string, date: string, group: boolean}} data
+   * @param {{chatId: number, name: string, members?:string[], pfp: string, lastSeen: string, date: string, group: boolean}} data
    * @param {{sender: string, content: string, date: string}[]} messages
    * @returns { HTMLDivElement }
    */
@@ -156,7 +156,7 @@ export default class PrincipalPanel {
     }
 
     const chat_panel = make("div", [], "chat_panel");
-    chat_panel.dataset.chatId = data.id;
+    chat_panel.dataset.chatId = data.chatId;
 
     const chat_header = make("header", [], "chat_header");
 
@@ -191,7 +191,7 @@ export default class PrincipalPanel {
       }, 60000);
     }
 
-    const chat_actions = ChatActions.create(data.id);
+    const chat_actions = ChatActions.create(data.chatId);
 
     text_container.append(chat_name, chat_info);
 
@@ -238,9 +238,14 @@ export default class PrincipalPanel {
     window.addEventListener("keydown", (e) => {
       let input_value = input_bar.value.trim();
 
-      let valid_characters = /[\w!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?áàéèíìóòúùýỳÁÀÉÈÍÌÓÒÚÙÝỲ]+/g;
-      
-      if (e.key == "Enter" && !e.shiftKey && input_value.match(valid_characters)) {
+      let valid_characters =
+        /[\w!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?áàéèíìóòúùýỳÁÀÉÈÍÌÓÒÚÙÝỲ]+/g;
+
+      if (
+        e.key == "Enter" &&
+        !e.shiftKey &&
+        input_value.match(valid_characters)
+      ) {
         chat_main.appendChild(
           Message.create(
             {
@@ -263,7 +268,6 @@ export default class PrincipalPanel {
       if (e.key == "Enter" && !e.shiftKey) {
         e.preventDefault();
       }
-
     });
 
     const audio_button = make("button");
@@ -285,7 +289,7 @@ export default class PrincipalPanel {
 class Message {
   /**
    *
-   * @param {{sender: string, content: string, date: string}} data
+   * @param {{messageId: number, sender: string, content: string, date: string}} data
    * @param {boolean} group
    * @param {boolean} sequence
    * @param {Map<string, string>} colors
@@ -329,7 +333,7 @@ class Message {
       };
 
       Dropdown.create(
-        data.id,
+        data.messageId,
         data.sender != "Me"
           ? [
               "Responder",

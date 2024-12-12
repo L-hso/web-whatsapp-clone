@@ -2,16 +2,16 @@ export class Dropdown {
   /**
    * Create a dropdown with id of the caller to use in persistence, and the options of persistence.
    * Also receives a object with the position of the caller and the margin in rem.
-   * @param {string} id
+   * @param {string} callerId
    * @param {string[]} options
    * @param {{x:number, y:number, marginX:string, marginY:string}} anchorPos
    * @param {boolean} overflows
    * @returns
    */
-  static create(id, options, anchorPos, overflows) {
+  static create(callerId, options, anchorPos, overflows) {
     if (!document.body.querySelector(".dropdown")) {
       const menu = make("menu", ["dropdown"]);
-      menu.dataset.callerId = id;
+      menu.dataset.callerId = callerId;
 
       for (const option of options) {
         const li = make("li", ["popover_option"]);
@@ -150,9 +150,11 @@ export function formatDate(date, AMPM = false) {
   let minutes = date.getMinutes();
 
   if (AMPM) {
-    formatedDate = `${(hours > 12 ?  hours - 12 : hours).toString().padStart(2, "0")}:${minutes
+    formatedDate = `${(hours > 12 ? hours - 12 : hours)
       .toString()
-      .padStart(2, "0")} ${hours > 11 ? "PM" : "AM"}`;
+      .padStart(2, "0")}:${minutes.toString().padStart(2, "0")} ${
+      hours > 11 ? "PM" : "AM"
+    }`;
   } else {
     formatedDate = `${hours.toString().padStart(2, "0")}:${minutes
       .toString()

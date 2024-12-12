@@ -4,17 +4,17 @@ import { Dropdown } from "./utils.js";
 export default class Chat {
   /**
    *
-   * @param {{id: string, pfp: string, name: string, date: string, lastMessage: string }} data chat data
+   * @param {{chatId: string, pfp: string, name: string, date: string, lastMessage: string }} data chat data
    * @returns {HTMLLIElement}
    */
   static create(data) {
     const chatBlock = make("li", ["chat_block"]);
-    chatBlock.dataset.chatId = data.id;
+    chatBlock.dataset.chatId = data.chatId;
 
     const chatPfpContainer = make("div", ["chat_pfp"]);
 
     const pfp = make("img");
-    pfp.src = data.pfp;
+    pfp.src = data.pfp ?? "https://placehold.co/600";
 
     chatPfpContainer.appendChild(pfp);
 
