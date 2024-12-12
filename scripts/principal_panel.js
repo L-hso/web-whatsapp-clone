@@ -1,4 +1,4 @@
-import { ChatActions, make, Dropdown, formatDate } from "./utils.js";
+import { ChatActions, make, Dropdown } from "./utils.js";
 
 export default class PrincipalPanel {
   static createNochatPanel() {
@@ -251,7 +251,7 @@ export default class PrincipalPanel {
             {
               sender: "Me",
               content: input_bar.value,
-              date: formatDate(new Date(), true),
+              date: (new Date()).toLocaleTimeString({}, {hour12:true, hour: "2-digit", minute: "2-digit"}),
             },
             false,
             chat_main.lastChild.dataset.mine == "true"
