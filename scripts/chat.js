@@ -4,7 +4,7 @@ import { Dropdown } from "./utils.js";
 export default class Chat {
   /**
    *
-   * @param {{chatId: string, pfp: string, name: string, date: string, lastMessage: string }} data chat data
+   * @param {{chatId: string, pfp: string, name: string, date: string, lastMessage: string, isGroup: boolean }} data chat data
    * @returns {HTMLLIElement}
    */
   static create(data) {
@@ -45,7 +45,7 @@ export default class Chat {
                 </svg>`;
 
     chatOptions.addEventListener("click", (e) => {
-      chatsCreateContextMenu(e, {
+      chatsCreateContextMenu(data.chatId, e, {
         x: e.currentTarget.getBoundingClientRect().x,
         y: e.currentTarget.getBoundingClientRect().y,
         marginX: "1.5",
@@ -60,7 +60,7 @@ export default class Chat {
     chatBlock.append(chatPfpContainer, chatInfo);
 
     chatBlock.addEventListener("contextmenu", (e) => {
-      chatsCreateContextMenu(e, { marginX: "0", marginY: "0" });
+      chatsCreateContextMenu(data.chatId, data.isGroup, e, { marginX: "0", marginY: "0" });
     });
 
     return chatBlock;
@@ -68,6 +68,8 @@ export default class Chat {
 }
 
 function chatsCreateContextMenu(
+  chatId,
+  isGroup,
   e,
   { x = e.clientX, y = e.clientY, marginX, marginY }
 ) {
@@ -76,18 +78,24 @@ function chatsCreateContextMenu(
 
   let blockPos = { x, y, marginX, marginY };
 
-  Dropdown.create(
-    e.target.dataset.id,
-    [
-      "Arquivar conversa",
-      "Silenciar notificações",
-      "Apagar conversa",
-      "Fixar conversa",
-      "Marcar como não lida",
-      "Adicionar aos favoritos",
-      "Bloquear",
-    ],
-    blockPos,
-    false
-  );
+  let options = isGroup
+    ? [
+        "Arquivar conversa",
+        "Silenciar notificações",
+        "Fixar conversa",
+        "Marcar como não lida",
+        "Adicionar aos favoritos",
+        "Sair do grupo",
+      ]
+    : [
+        "Arquivar conversa",
+        "Silenciar notificações",
+        "Apagar conversa",
+        "Fixar conversa",
+        "Marcar como não lida",
+        "Adicionar aos favoritos",
+        "Bloquear",
+      ];
+
+  Dropdown.create(chatId, options, blockPos, false);
 }
