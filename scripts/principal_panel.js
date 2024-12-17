@@ -146,7 +146,7 @@ export default class PrincipalPanel {
    * @param {{sender: string, content: string, date: string}[]} messages
    * @returns { HTMLDivElement }
    */
-  static createChatPanel(data, messages) {
+  static createChatPanel(data, messages, ws) {
     let members_colors = new Map();
 
     if (data.isGroup) {
@@ -257,7 +257,7 @@ export default class PrincipalPanel {
             chat_main.lastChild.dataset.mine == "true"
           )
         );
-
+        ws.send(JSON.stringify({"Me":input_bar.value}));
         input_bar.value = "";
         input_bar.style.height = "auto";
         input_bar.style.height = input_bar.scrollHeight + "px";
